@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $bg-color;
+  color: $gray-darker;
+  font-size: 16px;
+  margin: 0;
+  position: relative;
+}
+
+.title {
+  color: $black;
+  font-size: 2rem;
+  font-weight: 600;
+  left: 1.5rem;
+  position: absolute;
+  top: 1rem;
+}
+
+.input-container {
+  display: flex;
+}

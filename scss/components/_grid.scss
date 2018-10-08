@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.col {
+  padding-left: 2rem;
+  position: relative;
+}
+
+.col-4 {
+  flex-grow: 4;
+}
+
+.col-5 {
+  flex-grow: 5;
+}
+
+.col-3 {
+  flex-grow: 3;
+}
