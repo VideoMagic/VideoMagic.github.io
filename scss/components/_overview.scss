@@ -1,19 +1,27 @@
 .overview-container {
-  background-color: $white;
-  border-radius: 1rem;
   bottom: 2.5rem;
-  box-shadow: $card-shadow;
   left: 2rem;
   top: 6.5rem;
-  padding: 1.5rem;
   position: absolute;
   right: 0;
+}
+
+.overview-wrapper {
+  background-color: $white;
+  border-radius: 1rem;
+  box-shadow: $card-shadow;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 1.5rem;
+  position: relative;
 
   .overview-title {
     color: $black;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
+    padding-top: 1.5rem;
   }
 
   .overview-section {
@@ -43,6 +51,8 @@
   }
 
   .overview-section.current {
+    padding-bottom: 2.5rem;
+
     .overview-section-title {
       color: $gray-darker;
       font-size: 1.25rem;
@@ -105,6 +115,21 @@
     }
   }
 
+  .overview-sections-container {
+    height: 100%;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .overview-sections-wrapper {
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
   .overview-tabs {
     bottom: 0;
     border-top: 1px solid $border-color;
@@ -133,6 +158,57 @@
       color: $gray;
       padding-bottom: .75rem;
       padding-top: .75rem;
+    }
+  }
+
+  // For graphic
+  .overview-section {
+    $left-padding: 8px;
+
+    .overview-graphic-line-upper,
+    .overview-graphic-line-lower {
+      border-left: .5px solid $primary-lighter;
+      border-right: .5px solid $primary-lighter;
+      left: $left-padding + 3px;
+      position: absolute;
+      width: 0;
+    }
+
+    .overview-graphic-line-upper {
+      top: 0;
+      height: 8px;
+    }
+
+    .overview-graphic-line-lower {
+      top: 6px;
+      bottom: 0;
+    }
+
+    .overview-graphic-circle {
+      background-color: $primary;
+      border-radius: 4px;
+      height: 6px;
+      left: $left-padding;
+      position: absolute;
+      top: .375rem;
+      width: 6px;
+    }
+
+    &:first-child .overview-graphic-line-upper {
+      display: none;
+    }
+
+    &.current .overview-graphic-line-lower {
+      border-color: $gray-lighter;
+      border-style: dashed;
+    }
+
+    &.later .overview-graphic-circle {
+      background-color: $gray-light;
+    }
+
+    &:last-child .overview-graphic-line-lower {
+      display: none;
     }
   }
 }
