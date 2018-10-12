@@ -255,8 +255,18 @@ body {
   height: 6px;
   left: 8px;
   position: absolute;
-  top: .375rem;
+  top: 6px;
   width: 6px;
+}
+
+.overview-wrapper .overview-section .overview-graphic-circle.outer {
+  background-color: #fff;
+  border: 2px solid #f44336;
+  border-radius: 12px;
+  height: 12px;
+  left: 3px;
+  top: 1px;
+  width: 12px;
 }
 
 .overview-wrapper .overview-section:first-child .overview-graphic-line-upper {

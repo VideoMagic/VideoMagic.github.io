@@ -164,6 +164,7 @@
   // For graphic
   .overview-section {
     $left-padding: 8px;
+    $top-padding: 6px;
 
     .overview-graphic-line-upper,
     .overview-graphic-line-lower {
@@ -190,17 +191,29 @@
       height: 6px;
       left: $left-padding;
       position: absolute;
-      top: .375rem;
+      top: $top-padding;
       width: 6px;
+
+      &.outer {
+        background-color: $white;
+        border: 2px solid $primary;
+        border-radius: 12px;
+        height: 12px;
+        left: $left-padding - 5px;
+        top: $top-padding - 5px;
+        width: 12px;
+      }
     }
 
     &:first-child .overview-graphic-line-upper {
       display: none;
     }
 
-    &.current .overview-graphic-line-lower {
-      border-color: $gray-lighter;
-      border-style: dashed;
+    &.current {
+      .overview-graphic-line-lower {
+        border-color: $gray-lighter;
+        border-style: dashed;
+      }
     }
 
     &.later .overview-graphic-circle {
