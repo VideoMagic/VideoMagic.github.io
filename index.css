@@ -1,3 +1,9 @@
+@import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css);
+* {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+}
+
 html,
 body {
   height: 100%;
@@ -123,7 +129,7 @@ body {
   color: #333;
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  padding-right: 7rem;
+  padding-right: 7.5rem;
 }
 
 .overview-wrapper .overview-section.current .overview-next-button {
@@ -256,7 +262,7 @@ body {
   height: 6px;
   left: 8px;
   position: absolute;
-  top: 6px;
+  top: 12px;
   width: 6px;
 }
 
@@ -266,7 +272,7 @@ body {
   border-radius: 12px;
   height: 12px;
   left: 3px;
-  top: 1px;
+  top: 7px;
   width: 12px;
 }
 
