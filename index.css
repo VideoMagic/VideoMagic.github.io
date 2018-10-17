@@ -176,6 +176,14 @@ body {
   color: #f44336;
 }
 
+.overview-wrapper .overview-section.current .section-list-item .list-item-delete .material-icons {
+  color: #ff867c;
+}
+
+.overview-wrapper .overview-section.current .section-list-item .list-item-delete .material-icons:hover {
+  color: #f44336;
+}
+
 .overview-wrapper .overview-section.current .input-list-new {
   border: 1px solid #bdbdbd;
   border-radius: .25rem;
