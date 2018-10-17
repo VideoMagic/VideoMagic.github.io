@@ -32,6 +32,10 @@ body {
   display: flex;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,6 +243,10 @@ body {
   color: #bdbdbd;
 }
 
+.overview-wrapper .overview-tabs .overview-tab-item.deactive:hover {
+  cursor: not-allowed;
+}
+
 .overview-wrapper .overview-tabs .material-icons {
   color: #999;
   padding-bottom: .75rem;
@@ -256,11 +264,11 @@ body {
 
 .overview-wrapper .overview-section .overview-graphic-line-upper {
   top: 0;
-  height: 8px;
+  height: 12px;
 }
 
 .overview-wrapper .overview-section .overview-graphic-line-lower {
-  top: 6px;
+  top: 12px;
   bottom: 0;
 }
 
@@ -295,6 +303,12 @@ body {
 
 .overview-wrapper .overview-section.later .overview-graphic-circle {
   background-color: #bdbdbd;
+}
+
+.overview-wrapper .overview-section.later .overview-graphic-line-lower,
+.overview-wrapper .overview-section.later .overview-graphic-line-upper {
+  border-color: #dbdbdb;
+  border-style: dashed;
 }
 
 .overview-wrapper .overview-section:last-child .overview-graphic-line-lower {

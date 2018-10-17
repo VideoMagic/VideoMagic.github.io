@@ -160,6 +160,10 @@
 
       &.deactive {
         color: $gray-light;
+
+        &:hover {
+          cursor: not-allowed;
+        }
       }
     }
 
@@ -186,11 +190,11 @@
 
     .overview-graphic-line-upper {
       top: 0;
-      height: 8px;
+      height: $top-padding;
     }
 
     .overview-graphic-line-lower {
-      top: 6px;
+      top: $top-padding;
       bottom: 0;
     }
 
@@ -225,8 +229,16 @@
       }
     }
 
-    &.later .overview-graphic-circle {
-      background-color: $gray-light;
+    &.later {
+      .overview-graphic-circle {
+        background-color: $gray-light;
+      }
+
+      .overview-graphic-line-lower,
+      .overview-graphic-line-upper {
+        border-color: $gray-lighter;
+        border-style: dashed;
+      }
     }
 
     &:last-child .overview-graphic-line-lower {
