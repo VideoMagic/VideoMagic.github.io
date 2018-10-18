@@ -239,11 +239,11 @@ a:hover {
   color: #f44336;
 }
 
-.overview-wrapper .overview-tabs .overview-tab-item.deactive {
+.overview-wrapper .overview-tabs .overview-tab-item.inactive {
   color: #bdbdbd;
 }
 
-.overview-wrapper .overview-tabs .overview-tab-item.deactive:hover {
+.overview-wrapper .overview-tabs .overview-tab-item.inactive:hover {
   cursor: not-allowed;
 }
 
