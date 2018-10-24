@@ -1,0 +1,84 @@
+.advice-container {
+  background-color: $bg-advice;
+  border-left: 1px solid $border-color;
+  height: 100%;
+
+  .advice-wrapper {
+    bottom: 2.5rem;
+    display: flex;
+    position: absolute;
+    top: 2.5rem;
+    flex-direction: column-reverse;
+  }
+
+  .advice-card {
+    background-color: $white;
+    border-radius: .5rem;
+    box-shadow: $advice-shadow;
+    margin-bottom: 1.5rem;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+    min-height: 3rem;
+    padding: 1rem;
+    position: relative;
+
+    &:first-child {
+      margin-bottom: 0;
+    }
+
+    &.complete {
+      background-color: $correct-lighter;
+      min-height: 0;
+      padding-bottom: .75rem;
+      padding-top: .75rem;
+      
+      .advice-complete {
+        display: block !important;
+      }
+      .advice-content {
+        display: none !important;
+      }
+    }
+  }
+
+  .advice-content {
+    padding-right: 2.5rem;
+  }
+
+  .advice-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    .material-icons {
+      color: $gray-light;
+      font-size: 1rem;
+      margin-bottom: .625rem;
+
+      &:hover {
+        color: $gray;
+      }
+
+      &.done {
+        color: $primary-light;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .advice-complete {
+    color: $correct;
+    display: none;
+
+    .material-icons {
+      font-size: 1.25rem;
+      margin-right: .75rem;
+      vertical-align: sub; 
+    }
+  }
+}

@@ -328,9 +328,100 @@ a:hover {
   right: 0;
 }
 
-.analysis-container {
-  background-color: #fdfdfd;
+.advice-container {
+  background-color: #f5f5f5;
   border-left: 1px solid #e5e5e5;
   height: 100%;
+}
+
+.advice-container .advice-wrapper {
+  bottom: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 2.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.advice-container .advice-card {
+  background-color: #fff;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0 1px 4px #00000040;
+          box-shadow: 0 1px 4px #00000040;
+  margin-bottom: 1.5rem;
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+  min-height: 3rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.advice-container .advice-card:first-child {
+  margin-bottom: 0;
+}
+
+.advice-container .advice-card.complete {
+  background-color: #f1f8e9;
+  min-height: 0;
+  padding-bottom: .75rem;
+  padding-top: .75rem;
+}
+
+.advice-container .advice-card.complete .advice-complete {
+  display: block !important;
+}
+
+.advice-container .advice-card.complete .advice-content {
+  display: none !important;
+}
+
+.advice-container .advice-content {
+  padding-right: 2.5rem;
+}
+
+.advice-container .advice-icon-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.advice-container .advice-icon-wrapper .material-icons {
+  color: #bdbdbd;
+  font-size: 1rem;
+  margin-bottom: .625rem;
+}
+
+.advice-container .advice-icon-wrapper .material-icons:hover {
+  color: #999;
+}
+
+.advice-container .advice-icon-wrapper .material-icons.done {
+  color: #ff867c;
+}
+
+.advice-container .advice-icon-wrapper .material-icons.done:hover {
+  color: #f44336;
+}
+
+.advice-container .advice-complete {
+  color: #8ed240;
+  display: none;
+}
+
+.advice-container .advice-complete .material-icons {
+  font-size: 1.25rem;
+  margin-right: .75rem;
+  vertical-align: sub;
 }
 /*# sourceMappingURL=index.css.map */
