@@ -4,17 +4,20 @@
   height: 100%;
 
   .advice-wrapper {
-    bottom: 2.5rem;
+    bottom: 0;
     display: flex;
+    padding: 2.5rem 0;
     position: absolute;
     top: 2.5rem;
     flex-direction: column-reverse;
+    overflow: auto;
   }
 
   .advice-card {
     background-color: $white;
     border-radius: .5rem;
     box-shadow: $advice-shadow;
+    flex-shrink: 0;
     margin-bottom: 1.5rem;
     margin-left: 1.75rem;
     margin-right: 1.75rem;
