@@ -51,7 +51,8 @@
   }
 
   .overview-section.current {
-    padding-bottom: 2.5rem;
+    padding-bottom: 5rem;
+    padding-top: 3rem;
 
     .overview-section-title {
       color: $gray-darker;
@@ -71,7 +72,7 @@
       padding-right: .5rem;
       position: absolute;
       right: 0;
-      top: 0;
+      top: 3rem;
 
       .material-icons {
         color: $primary;
@@ -178,6 +179,7 @@
   .overview-section {
     $left-padding: 8px;
     $top-padding: 12px;
+    $current-top-padding: 60px;
 
     .overview-graphic-line-upper,
     .overview-graphic-line-lower {
@@ -223,9 +225,21 @@
     }
 
     &.current {
+      .overview-graphic-line-upper {
+        height: $current-top-padding;
+      }
+
       .overview-graphic-line-lower {
         border-color: $gray-lighter;
         border-style: dashed;
+      }
+
+      .overview-graphic-circle {
+        top: $current-top-padding;
+
+        &.outer {
+          top: $current-top-padding - 5px;
+        }
       }
     }
 
@@ -243,6 +257,38 @@
 
     &:last-child .overview-graphic-line-lower {
       display: none;
+    }
+  }
+
+  .overview-add-section-button {
+    background-color: $white;
+    border: 1px solid $primary;
+    border-radius: .75rem;
+    color: $primary;
+    font-size: .875rem;
+    height: 1.75rem;
+    left: 0;
+    line-height: 1.75rem;
+    padding-left: .5rem;
+    padding-right: 1rem;
+    position: absolute;
+
+    &.top {
+      top: 0;
+    }
+
+    &.bottom {
+      bottom: 1.75rem;
+    }
+
+    &:hover {
+      background-color: $primary-bg;
+    }
+
+    .material-icons {
+      font-size: 1rem;
+      margin-right: .5rem;
+      vertical-align: sub;
     }
   }
 }
