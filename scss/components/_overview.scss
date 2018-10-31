@@ -57,7 +57,7 @@
     .overview-section-title {
       color: $gray-darker;
       font-size: 1.25rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       padding-right: 7.5rem;
     }
     
@@ -83,25 +83,29 @@
     }
 
     .section-list-item {
-      color: $gray-dark;
+      color: $gray-darker;
+      display: flex;
       font-size: 1.125rem;
-      margin-bottom: 1rem;
+      margin-bottom: .75rem;
+
+      .list-item-like {
+        padding: .125rem 0;
+      }
 
       .material-icons {
         color: $gray-light;
-        margin-right: .75rem;
+        font-size: 1.375rem;
+        margin-right: .875rem;
         vertical-align: sub;
       }
 
-      .population {
-        color: $gray-light;
-        font-size: .875rem;
-        margin-left: .25rem;
+      &.active .material-icons,
+      &.active .section-item-population {
+        color: $primary;
       }
 
-      &.active .material-icons,
-      &.active .population {
-        color: $primary;
+      &.active .section-item-bar {
+        background-color: $primary-lighter;
       }
 
       .list-item-delete .material-icons {
@@ -113,6 +117,37 @@
       }
     }
 
+    .section-item-content {
+      flex-grow: 1;
+      padding: .125rem 3.5rem .125rem .75rem;
+      position: relative;
+    }
+
+    .section-item-text {
+      position: relative;
+    }
+
+    .section-item-bar-wrapper {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .section-item-bar {
+      background-color: $gray-lighterer;
+      height: 100%;
+    }
+
+    .section-item-population {
+      color: $gray;
+      font-size: .875rem;
+      position: absolute;
+      right: 0;
+      top: .325rem;
+    }
+
     .input-list-new {
       border: 1px solid $gray-light;
       border-radius: .25rem;
@@ -120,6 +155,7 @@
       font-size: 1rem;
       height: 2.25rem;
       line-height: 2.25rem;
+      margin-top: .25rem;
       padding: 0 1rem;
       width: 100%;
     }
