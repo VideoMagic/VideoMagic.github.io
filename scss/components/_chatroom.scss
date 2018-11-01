@@ -8,4 +8,59 @@
   padding: 1.5rem;
   position: absolute;
   right: 0;
+
+  .chatroom-dark-cover {
+    background-color: $darkcover-bg;
+    border-radius: 1rem;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .chatroom-dark-cover-content {
+    @include content-center-vertical;
+    padding: 0 3rem;
+  }
+
+  .chatroom-cover-text-group {
+    margin-bottom: 3.5rem;
+    line-height: 1.4;
+  }
+
+  .cover-subtitle {
+    color: $gray-lighter;
+    font-size: 1.125rem;
+  }
+
+  .cover-title {
+    color: $white;
+    font-size: 1.675rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+
+  .cover-explanation {
+    color: $gray-light;
+  }
+
+  .button-wrapper {
+    text-align: center;
+  }
+
+  .button-start {
+    background-color: $primary-dark;
+    border-radius: .5rem;
+    color: $white;
+    display: inline-block;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 0 auto;
+    padding: 0 2.25rem;
+
+    &:hover {
+      background-color: darken($primary-dark, 10%);
+    }
+  }
 }

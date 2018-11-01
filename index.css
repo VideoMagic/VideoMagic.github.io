@@ -36,6 +36,10 @@ a:hover {
   cursor: pointer;
 }
 
+.hide {
+  display: none !important;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,6 +414,64 @@ a:hover {
   padding: 1.5rem;
   position: absolute;
   right: 0;
+}
+
+.chatroom-container .chatroom-dark-cover {
+  background-color: rgba(51, 51, 51, 0.9);
+  border-radius: 1rem;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.chatroom-container .chatroom-dark-cover-content {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 0 3rem;
+}
+
+.chatroom-container .chatroom-cover-text-group {
+  margin-bottom: 3.5rem;
+  line-height: 1.4;
+}
+
+.chatroom-container .cover-subtitle {
+  color: #dbdbdb;
+  font-size: 1.125rem;
+}
+
+.chatroom-container .cover-title {
+  color: #fff;
+  font-size: 1.675rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.chatroom-container .cover-explanation {
+  color: #bdbdbd;
+}
+
+.chatroom-container .button-wrapper {
+  text-align: center;
+}
+
+.chatroom-container .button-start {
+  background-color: #d75d54;
+  border-radius: .5rem;
+  color: #fff;
+  display: inline-block;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 0 auto;
+  padding: 0 2.25rem;
+}
+
+.chatroom-container .button-start:hover {
+  background-color: #c93a2f;
 }
 
 .advice-container {
