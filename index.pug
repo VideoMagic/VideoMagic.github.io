@@ -108,8 +108,8 @@ html
                   .overview-section-title 어떤 한계점이 제일 문제입니까?
       .col.col-5
         .chatroom-container
-          //- remoe the cover with .hide class
-          .chatroom-dark-cover
+          //- remove the cover with .hide class
+          .chatroom-dark-cover.hide
             .chatroom-dark-cover-content
               .chatroom-cover-text-group
                 .cover-subtitle 토의 주제
@@ -121,6 +121,29 @@ html
                 .cover-explanation 토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다.
               .button-wrapper
                 a.button-start 토의 시작하기
+          .chatroom-info-container
+            .chatroom-info-wrapper
+              .chatroom-users-container
+                .chatroom-users-title 참가자
+                .chatroom-users-wrapper
+                  .user-box.moderator 사회
+                  .user-box P1
+                  .user-box.current P2
+                  .user-box P3
+                  .user-box P4
+          .chatroom-content-container
+            .chatroom-content-wrapper
+              .chatroom-utterances-wrapper
+                .user-box.moderator 사회
+                .chatroom-utterances-text 안녕하세요
+                .chatroom-utterances-text 이번 토론을 진행하게 된 사회자입니다
+              .chatroom-utterances-wrapper
+                .user-box.current P2
+                .chatroom-utterances-text 안녕하세요?
+          .chatroom-chatbox-container
+            .chatbox-input-wrapper
+              input.chatbox-input(type="text" placeholder="메세지 입력하기")
+              .chatbox-sub-text P2가 입력 중입니다...
       .col.col-3
         .advice-container
           .advice-wrapper

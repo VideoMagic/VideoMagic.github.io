@@ -411,7 +411,6 @@ a:hover {
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   left: 2rem;
   top: 2.5rem;
-  padding: 1.5rem;
   position: absolute;
   right: 0;
 }
@@ -472,6 +471,132 @@ a:hover {
 
 .chatroom-container .button-start:hover {
   background-color: #c93a2f;
+}
+
+.chatroom-container .chatroom-info-container {
+  height: 4rem;
+  left: 0;
+  padding: 1rem 1.5rem 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.chatroom-container .user-box {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #bdbdbd;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 300;
+  height: 2.25rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 2.25rem;
+}
+
+.chatroom-container .user-box.moderator {
+  background-color: #f44336;
+}
+
+.chatroom-container .user-box.current {
+  background-color: #ff9800;
+}
+
+.chatroom-container .chatroom-users-container {
+  padding-left: 3.375rem;
+  position: relative;
+}
+
+.chatroom-container .chatroom-users-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chatroom-container .chatroom-users-wrapper .user-box {
+  margin-right: .375rem;
+}
+
+.chatroom-container .chatroom-users-title {
+  bottom: 0;
+  color: #999;
+  left: 0rem;
+  position: absolute;
+}
+
+.chatroom-container .chatroom-content-container {
+  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+  bottom: 5.5rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 4rem;
+}
+
+.chatroom-container .chatroom-chatbox-container {
+  bottom: 0;
+  height: 5.5rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.chatroom-container .chatbox-input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.25rem 1.5rem 0;
+}
+
+.chatroom-container .chatbox-input {
+  border: 2px solid #dbdbdb;
+  border-radius: .375rem;
+  font-size: 1rem;
+  padding: .625rem 1.25rem;
+}
+
+.chatroom-container .chatbox-sub-text {
+  color: #bdbdbd;
+  font-size: .75rem;
+  padding-left: .5rem;
+}
+
+.chatroom-container .chatroom-content-wrapper {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  padding: 1.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.chatroom-container .chatroom-utterances-wrapper {
+  margin-bottom: 1rem;
+  padding-left: 3.5rem;
+  padding-top: .25rem;
+  position: relative;
+}
+
+.chatroom-container .chatroom-utterances-wrapper .user-box {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.chatroom-container .chatroom-utterances-text {
+  margin-bottom: .5rem;
 }
 
 .advice-container {

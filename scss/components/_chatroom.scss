@@ -1,3 +1,6 @@
+$chatroom-info-height: 4rem;
+$chatroom-chatbox-height: 5.5rem;
+
 .chatroom-container {
   background-color: $white;
   border-radius: 1rem;
@@ -5,7 +8,6 @@
   box-shadow: $card-shadow;
   left: 2rem;
   top: 2.5rem;
-  padding: 1.5rem;
   position: absolute;
   right: 0;
 
@@ -62,5 +64,118 @@
     &:hover {
       background-color: darken($primary-dark, 10%);
     }
+  }
+
+  .chatroom-info-container {
+    height: $chatroom-info-height;
+    left: 0;
+    padding: 1rem 1.5rem 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .user-box {
+    align-items: center;
+    background-color: $gray-light;
+    color: $white;
+    display: flex;
+    font-weight: 300;
+    height: 2.25rem;
+    justify-content: center;
+    text-align: center;
+    width: 2.25rem;
+
+    &.moderator {
+      background-color: $primary;
+    }
+
+    &.current {
+      background-color: $current;
+    }
+  }
+
+  .chatroom-users-container {
+    padding-left: 3.375rem;
+    position: relative;
+  }
+
+  .chatroom-users-wrapper {
+    display: flex;
+
+    .user-box {
+      margin-right: .375rem;
+    }
+  }
+
+  .chatroom-users-title {
+    bottom: 0;
+    color: $gray;
+    left: 0rem;
+    position: absolute;
+  }
+
+  .chatroom-content-container {
+    border-bottom: 1px solid $gray-lighter;
+    border-top: 1px solid $gray-lighter;
+    bottom: $chatroom-chatbox-height;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: $chatroom-info-height;
+  }
+
+  .chatroom-chatbox-container {
+    bottom: 0;
+    height: $chatroom-chatbox-height;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  .chatbox-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 1.5rem 0;
+  }
+
+  .chatbox-input {
+    border: 2px solid $gray-lighter;
+    border-radius: .375rem;
+    font-size: 1rem;
+    padding: .625rem 1.25rem;
+  }
+
+  .chatbox-sub-text {
+    color: $gray-light;
+    font-size: .75rem;
+    padding-left: .5rem;
+  }
+
+  .chatroom-content-wrapper {
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .chatroom-utterances-wrapper {
+    margin-bottom: 1rem;
+    padding-left: 3.5rem;
+    padding-top: .25rem;
+    position: relative;
+
+    .user-box {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .chatroom-utterances-text {
+    margin-bottom: .5rem;
   }
 }
