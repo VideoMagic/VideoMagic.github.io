@@ -98,6 +98,12 @@ $chatroom-chatbox-height: 5.5rem;
   .chatroom-users-container {
     padding-left: 3.375rem;
     position: relative;
+
+    .chatroom-info-title {
+      left: 0;
+      position: absolute;
+      bottom: 0;
+    }
   }
 
   .chatroom-users-wrapper {
@@ -108,11 +114,24 @@ $chatroom-chatbox-height: 5.5rem;
     }
   }
 
-  .chatroom-users-title {
-    bottom: 0;
+  .chatroom-info-title {
     color: $gray;
-    left: 0rem;
+  }
+
+  .chatroom-time-container {
     position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+
+    .chatroom-info-title {
+      display: inline-block;
+      margin-right: .25rem;
+    }
+
+    .chatroom-info-content {
+      display: inline-block;
+      font-size: 1.75rem;
+    }
   }
 
   .chatroom-content-container {
@@ -156,26 +175,26 @@ $chatroom-chatbox-height: 5.5rem;
     bottom: 0;
     left: 0;
     overflow: auto;
-    padding: 1.5rem;
+    padding: 1.125rem 0;
     position: absolute;
     right: 0;
     top: 0;
   }
 
   .chatroom-utterances-wrapper {
-    margin-bottom: 1rem;
-    padding-left: 3.5rem;
-    padding-top: .25rem;
+    padding: .375rem 1.5rem .375rem 5rem;
+    padding-left: 5rem;
+    padding-right: 1.5rem;
     position: relative;
 
     .user-box {
-      left: 0;
+      left: 1.5rem;
       position: absolute;
-      top: 0;
+      top: .375rem;
     }
   }
 
   .chatroom-utterances-text {
-    margin-bottom: .5rem;
+    line-height: 2.25rem;
   }
 }
