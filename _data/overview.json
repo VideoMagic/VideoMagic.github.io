@@ -1,0 +1,41 @@
+[
+    {
+        "isCurrent": false,
+        "question": "목표는 무엇입니까?",
+        "active": "쾌적한 보행 환경 만들기",
+        "inactive": ["주차 공간 부족하지 않게 만들기"]
+
+    },
+    {
+        "isCurrent": false,
+        "question": "목표를 위한 행동/제도/프로세스는 무엇입니까?",
+        "active": "주차 단속원이 주차단속을 한다",
+        "inactive": []
+    },
+    {
+        "isCurrent": false,
+        "question": "기존 제도의 한계점은 무엇입니까?",
+        "active": "잘 안 된다",
+        "inactive": ["퇴근 후에는 잘 단속하지 않는다", "신고가 안 들어오면 자발적으로 단속을 하지 않는다"]
+    },
+    {
+        "isCurrent": true,
+        "question": "한계점들을 분류해봅시다",
+        "items": [
+            {
+                "text": "단속 시간 문제",
+                "vote": "2/3"
+            },
+            {
+                "text": "자발적 단속 의지가 없음",
+                "vote": "1/3"
+            }
+        ]
+    },
+    {
+        "isCurrent": false,
+        "question": "어떤 한계점이 제일 문제입니까?",
+    }
+    
+    
+]
