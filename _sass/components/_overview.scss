@@ -7,28 +7,32 @@
 }
 
 .overview-wrapper {
-  background-color: $white;
+  background-color: $bg-advice;
   border-radius: 1rem;
   box-shadow: $card-shadow;
   display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
+  overflow: hidden;
 
-  .overview-title {
-    color: $black;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    padding: 1.5rem 1.5rem 0;
+  .overview-title-wrapper {
+    background-color: $white;
+
+    .overview-title {
+      color: $black;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding: 1.5rem 1.5rem 0;
+    }
   }
 
   .overview-section-container {
     padding: 0 1.5rem;
   }
   .overview-section {
-    padding-left: 2rem;
-    padding-bottom: 1.5rem;
+    padding: .75rem 0 .75rem 2rem;
     position: relative;
 
     .overview-section-title {
@@ -38,7 +42,7 @@
     }
 
     .overview-section-list {
-      padding-left: .5rem;
+      padding-left: 1rem;
     }
 
     .section-list-item {
@@ -52,10 +56,17 @@
     }
   }
 
-  .overview-section.current {
-    padding-bottom: 5rem;
-    padding-top: 3rem;
+  .overview-section-container.current {
+    background-color: $white;
 
+    .overview-section {
+      padding-bottom: 4rem;
+      padding-top: 4rem;
+      .overview-section-list {
+        padding-left: .5rem;
+      }
+    }
+    
     .overview-section-title {
       color: $gray-darker;
       font-size: 1.25rem;
@@ -74,10 +85,9 @@
       padding-right: .5rem;
       position: absolute;
       right: 0;
-      top: 3rem;
+      top: 3.6rem;
 
       .material-icons {
-        color: $primary;
         font-size: 1.25rem;
         line-height: 2rem;
         vertical-align: sub;
@@ -140,6 +150,7 @@
     .section-item-bar {
       background-color: $gray-lighterer;
       height: 100%;
+      width: attr(data-width);
     }
 
     .section-item-population {
@@ -176,18 +187,18 @@
     position: absolute;
     top: 0;
     right: 0;
+    padding-top: .5rem;
   }
 
   .overview-tabs {
     border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
     display: flex;
-    margin: 0 -1.5rem 1.25rem;
     position: relative;
     padding: 0 1.5rem;
 
     .overview-tab-item {
-      color: $gray;
+      color: $gray-light;
       flex-grow: 1;
       height: 3rem;
       line-height: 3rem;
@@ -195,10 +206,11 @@
 
       &.active {
         color: $primary;
+        font-weight: 600;
       }
 
       &.inactive {
-        color: $gray-light;
+        color: $gray-lighter;
 
         &:hover {
           cursor: not-allowed;
@@ -216,8 +228,8 @@
   // For graphic
   .overview-section-container {
     $left-padding: 8px;
-    $top-padding: 12px;
-    $current-top-padding: 60px;
+    $top-padding: 22px;
+    $current-top-padding: 76px;
 
     .overview-graphic-line-upper,
     .overview-graphic-line-lower {
@@ -312,11 +324,11 @@
     position: absolute;
 
     &.top {
-      top: 0;
+      top: 1rem;
     }
 
     &.bottom {
-      bottom: 1.75rem;
+      bottom: 1rem;
     }
 
     &:hover {
