@@ -7,7 +7,7 @@
 }
 
 .overview-wrapper {
-  background-color: $bg-color;
+  background-color: lighten($bg-color, 0.5%);
   border-radius: 1rem;
   box-shadow: $card-shadow;
   display: flex;
@@ -30,6 +30,8 @@
 
   .overview-section-container {
     padding: 0 1.5rem;
+    border-bottom: 1px solid $gray-lighterer;
+
   }
   .overview-section {
     padding: .75rem 0 .75rem 2rem;
@@ -62,6 +64,8 @@
     .overview-section {
       padding-bottom: 4rem;
       padding-top: 4rem;
+      border-bottom: none;
+
       .overview-section-list {
         padding-left: .5rem;
       }
@@ -294,6 +298,9 @@
     }
 
     &.later {
+      .overview-section {
+        border-bottom: none;
+      }
       .overview-graphic-circle {
         background-color: $gray-light;
       }
