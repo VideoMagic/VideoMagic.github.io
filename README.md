@@ -1,6 +1,10 @@
 # microngo_markup
 
-- Check with Jekyll
+- Check live website with Jekyll
   - `bundle && jekyll serve`
-- Check raw HTML
-  - See `_site` directory
+- Check HTML
+  - **HTML with Liquid**: See `_layouts` directory
+  - **compiled HTML**: See `_site/index.html`
+- Check stylesheets
+  - **SASS**: See `_sass` directory
+  - **compiled CSS**: See `_site/assets/main.css`
