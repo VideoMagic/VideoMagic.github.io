@@ -93,6 +93,7 @@ $chatroom-chatbox-height: 5.5rem;
     &.current {
       border: 3.5px solid $current;
       position: relative;
+
       &::after {
         content: "나";
         background: $current;
@@ -195,19 +196,40 @@ $chatroom-chatbox-height: 5.5rem;
   }
 
   .chatroom-utterances-wrapper {
-    padding: .375rem 1.5rem .375rem 5rem;
-    padding-left: 5rem;
-    padding-right: 1.5rem;
+    padding: .375rem 1.5rem;
     position: relative;
 
     .user-box {
       left: 1.5rem;
       position: absolute;
       top: .375rem;
+
+      &.current {
+        right: 1.5rem;
+        left: auto;
+      }
     }
   }
 
+  $user-side-margin: 3rem;
+  $other-side-margin: 6rem;
+
   .chatroom-utterances-text {
-    line-height: 2.25rem;
+    line-height: 1.6;
+    font-size: .95rem;
+    border: 2px solid $border-color;
+    padding: .4rem 1rem;
+    margin-left: $user-side-margin;
+    margin-right: $other-side-margin;
+  }
+
+  .moderator + .chatroom-utterances-text {
+    border: 2px solid #f7e2e2 !important;
+    background: rgba(247, 226, 226, .25) !important;
+  }
+
+  .current + .chatroom-utterances-text {
+    margin-right: $user-side-margin;
+    margin-left: $other-side-margin;
   }
 }
