@@ -221,6 +221,12 @@ $chatroom-chatbox-height: 5.5rem;
     padding: .4rem 1rem;
     margin-left: $user-side-margin;
     margin-right: $other-side-margin;
+    .mention {
+      background-color: $correct-lighter;
+      color: $correct;
+      font-size: .9rem;
+      padding: 0 .2rem;
+    }
   }
 
   .moderator + .chatroom-utterances-text {
