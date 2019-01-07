@@ -241,8 +241,8 @@
 
     .overview-graphic-line-upper,
     .overview-graphic-line-lower {
-      border-left: .5px solid $primary-lighter;
-      border-right: .5px solid $primary-lighter;
+      border-left: .5px solid $gray-lighter;;
+      border-right: .5px solid $gray-lighter;;
       left: $left-padding + 3px;
       position: absolute;
       width: 0;
@@ -259,7 +259,7 @@
     }
 
     .overview-graphic-circle {
-      background-color: $primary;
+      background-color: $gray-light;
       border-radius: 4px;
       height: 6px;
       left: $left-padding;
@@ -294,6 +294,10 @@
 
       .overview-graphic-circle {
         top: $current-top-padding;
+
+        &:not(.outer) {
+          background-color: $primary;
+        }
 
         &.outer {
           top: $current-top-padding - 5px;
