@@ -30,8 +30,12 @@
 
   .overview-section-container {
     padding: 0 1.5rem;
-    border-bottom: 1px solid $gray-lighterer;
-
+    border-bottom: 1px solid $gray-lighter;
+    
+    &:not(.current) {
+      opacity: .8;
+      cursor: not-allowed;
+    }
   }
   .overview-section {
     padding: .75rem 0 .75rem 2rem;
@@ -60,6 +64,7 @@
 
   .overview-section-container.current {
     background-color: $white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 
     .overview-section {
       padding-bottom: 4rem;
