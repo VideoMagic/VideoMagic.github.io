@@ -238,4 +238,27 @@ $chatroom-chatbox-height: 5.5rem;
     margin-right: $user-side-margin;
     margin-left: $other-side-margin;
   }
+
+  .chatroom-division {
+    text-align: center;
+    font-size: .75rem;
+    color: $gray;
+    margin: .5rem 1rem;
+    position: relative;
+    z-index: 999;
+    span {
+      background-color: $white;
+      padding: 0 1rem;
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      display: block;
+      position: absolute;
+      top: 50%;
+      background: $gray-lighter;
+      z-index: -1;
+    }
+  }
 }
