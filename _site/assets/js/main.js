@@ -1,0 +1,1 @@
+function startChat(){for(var t=document.querySelector(".chatroom-dark-cover"),e=t.parentNode.children,r=0;r<e.length;r++)e[r].classList.remove("hide");t.classList.add("hide")}startChat(),document.querySelector(".button-start").onclick=function(){startChat()};
