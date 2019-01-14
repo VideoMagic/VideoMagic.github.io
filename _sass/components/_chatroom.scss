@@ -1,5 +1,6 @@
-$chatroom-info-height: 4rem;
+$chatroom-info-height: 3rem;
 $chatroom-chatbox-height: 5.5rem;
+$feedback-height: 5.5rem;
 
 .chatroom-container {
   background-color: $white;
@@ -10,6 +11,7 @@ $chatroom-chatbox-height: 5.5rem;
   bottom: 2.5rem;
   position: absolute;
   right: 0;
+  margin-right: 2rem;
 
   .chatroom-dark-cover {
     background-color: $darkcover-bg;
@@ -19,6 +21,7 @@ $chatroom-chatbox-height: 5.5rem;
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 999;
   }
 
   .chatroom-dark-cover-content {
@@ -69,7 +72,7 @@ $chatroom-chatbox-height: 5.5rem;
   .chatroom-info-container {
     height: $chatroom-info-height;
     left: 0;
-    padding: 1rem 1.5rem 0;
+    padding: .35rem 1.5rem 0;
     position: absolute;
     right: 0;
     top: 0;
@@ -85,6 +88,8 @@ $chatroom-chatbox-height: 5.5rem;
     justify-content: center;
     text-align: center;
     width: 2.25rem;
+    white-space: nowrap;
+    border-radius: .5rem;
 
     &.moderator {
       background-color: $primary;
@@ -110,13 +115,13 @@ $chatroom-chatbox-height: 5.5rem;
   }
 
   .chatroom-users-container {
-    padding-left: 3.375rem;
     position: relative;
 
     .chatroom-info-title {
-      left: 0;
-      position: absolute;
-      bottom: 0;
+      font-size: .95rem;
+      display: flex;
+      align-items: flex-end;
+      margin-right: .5rem;
     }
   }
 
@@ -125,6 +130,7 @@ $chatroom-chatbox-height: 5.5rem;
 
     .user-box {
       margin-right: .375rem;
+      transform: scale(0.85);
     }
   }
 
@@ -134,7 +140,7 @@ $chatroom-chatbox-height: 5.5rem;
 
   .chatroom-time-container {
     position: absolute;
-    top: 1rem;
+    top: .35rem;
     right: 1.5rem;
 
     .chatroom-info-title {
@@ -144,7 +150,7 @@ $chatroom-chatbox-height: 5.5rem;
 
     .chatroom-info-content {
       display: inline-block;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -169,7 +175,7 @@ $chatroom-chatbox-height: 5.5rem;
   .chatbox-input-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 1.25rem 1.5rem 0;
+    padding: 1rem 1.5rem 0;
   }
 
   .chatbox-input {
@@ -177,6 +183,7 @@ $chatroom-chatbox-height: 5.5rem;
     border-radius: .375rem;
     font-size: 1rem;
     padding: .625rem 1.25rem;
+    height: 48px;
   }
 
   .chatbox-sub-text {
@@ -189,63 +196,82 @@ $chatroom-chatbox-height: 5.5rem;
     bottom: 0;
     left: 0;
     overflow: auto;
-    padding: 1.125rem 0;
+    padding: .75rem 0 .5rem;
     position: absolute;
     right: 0;
     top: 0;
+  }
+  
+  .feedback-wrapper + .chatroom-content-wrapper {
+    bottom: $feedback-height
   }
 
   .chatroom-utterances-wrapper {
     padding: .375rem 1.5rem;
     position: relative;
 
-    .user-box {
-      left: 1.5rem;
-      position: absolute;
-      top: .375rem;
+    .chatroom-utterances-container {
+      position: relative;
+      transform: translateX(0);
+      transition: transform .3s ease;
 
-      &.current {
-        right: 1.5rem;
-        left: auto;
+      .user-box {
+        position: absolute;
       }
+    }
+
+    &:before {
+      content: "후보\A등록";
+      box-sizing: border-box;
+      height: 100%;
+      width: 3rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: .8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $current;
+      color: $primary-bg;
+      white-space: pre-wrap;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    &.moderator {
+      background-color: rgba(247, 226, 226, .2) !important;
+      &:hover {
+        background-color: rgba(247, 226, 226, .5) !important;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $bg-color;
+
+      &:before {
+        opacity: 1;
+      }
+      
     }
   }
 
-  $user-side-margin: 3rem;
-  $other-side-margin: 6rem;
+  $user-side-margin: 2.5rem;
 
   .chatroom-utterances-text {
     line-height: 1.6;
     font-size: .95rem;
-    border: 2px solid $border-color;
     padding: .4rem 1rem;
     margin-left: $user-side-margin;
-    margin-right: $other-side-margin;
-    .mention {
-      background-color: $correct-lighter;
-      color: $correct;
-      font-size: .9rem;
-      padding: 0 .2rem;
-    }
   }
-
-  .moderator + .chatroom-utterances-text {
-    border: 2px solid #f7e2e2 !important;
-    background: rgba(247, 226, 226, .25) !important;
-  }
-
-  .current + .chatroom-utterances-text {
-    margin-right: $user-side-margin;
-    margin-left: $other-side-margin;
-  }
-
   .chatroom-division {
     text-align: center;
     font-size: .75rem;
     color: $gray;
     margin: .5rem 1rem;
     position: relative;
-    z-index: 999;
+    z-index: 998;
     span {
       background-color: $white;
       padding: 0 1rem;
@@ -259,6 +285,46 @@ $chatroom-chatbox-height: 5.5rem;
       top: 50%;
       background: $gray-lighter;
       z-index: -1;
+    }
+  }
+
+  .replies {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    .replies-container {
+      display: flex;
+    }
+    i {
+      margin: .5rem -1.2rem 0 1rem;
+      color: $gray;
+    }
+    .chatroom-utterances-wrapper {
+      &:hover {
+        background-color: inherit;
+      }
+      &:before {
+        content: none;
+      }
+    }
+  }
+  .feedback {
+    padding: .375rem 0 .375rem 3.5rem;
+    display: flex;
+    .btn {
+      background-color: $secondary;
+      border-radius: .75rem;
+      color: $white;
+      font-size: .875rem;
+      padding: .25rem .5rem;
+      cursor: pointer;
+      display: inline-block;
+      margin-right: .2rem;
+
+      .header {
+        opacity: .8;
+      }
+
     }
   }
 }

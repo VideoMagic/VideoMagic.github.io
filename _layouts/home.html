@@ -2,19 +2,16 @@
 layout: default
 ---
 
-
 <div class="row">
-  <a class="title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+    <a class="title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
 
-  <div class="col col-4">
-      {% include overview.html %}
-  </div>
-  <div class="col col-5">
-      {% include chat.html %}
-  </div>
-  <div class="col col-3">
-      {% include advice.html %}
-  </div>
+    <div class="col col-3">
+        {% include overview.html %}
+    </div>
+    <div class="col col-5">
+        {% include chat.html %}
+    </div>
 </div>
+
 
   

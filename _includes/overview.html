@@ -2,89 +2,96 @@
     <div class="overview-wrapper">
         <div class="overview-title-wrapper">
             <div class="overview-title">대전시청의 주차 관리 문제</div>
-            <div class="overview-tabs">
-                <a class="overview-tab-item">문제 분석</a>
-                <i class="material-icons">keyboard_arrow_right</i>
-                <a class="overview-tab-item active">해결책 토의</a>
-                <i class="material-icons">keyboard_arrow_right</i>
-                <a class="overview-tab-item inactive">행동 논의</a>
-            </div>
         </div>
-        <div class="overview-sections-container">
-            <div class="overview-sections-wrapper">
 
-                {% for item in site.data.overview %}
-                <div class="overview-section-container {{item.status}}">
+        <div class="overview-content-wrapper">
+            <div class="overview-tabs">
+                <div class="overview-tab-item-container">
+                    <div class="overview-graphic-line-upper"></div>
+                    <div class="overview-graphic-line-lower"></div>
+                    <div class="overview-graphic-line-hor"></div>
+                    <div id="step0" class="overview-tab-item active">문제 분석</div>
+                </div>
 
-                    {% if item.status == "prev" %}
-                    <div class="overview-section">
+                <div class="overview-tab-item-container">
+                    <div class="overview-graphic-line-upper"></div>
+                    <div class="overview-graphic-line-lower"></div>
+                    <div class="overview-graphic-line-hor"></div>
+                    <div id="step1" class="overview-tab-item">해결책 토의</div>
+                </div>
+
+                <div class="overview-tab-item-container">
+                    <div class="overview-graphic-line-upper"></div>
+                    <div class="overview-graphic-line-hor"></div>
+                    <div id="step2" class="overview-tab-item">행동 논의</div>
+                </div>
+            </div>
+
+            <div class="overview-sections-container">
+                {% for overview in site.data.overview %}
+                <div id="question{{forloop.index0}}" class="overview-sections-wrapper {% if forloop.index0 != 0 %} hide {% endif %}">
+
+                    {% for item in overview %}
+                    <div class="overview-section-container {{item.status}}">
+
                         <div class="overview-graphic-line-upper"></div>
                         <div class="overview-graphic-line-lower"></div>
-                            <a class="overview-graphic-circle-wrapper">
-                                <div class="overview-graphic-circle"></div>
-                            </a>
-                        <div class="overview-section-title">{{ item.question }} </div>
-                        <div class="overview-section-list">
-                            <div class="section-list-item active">{{ item.active }}</div>
-                            {% for i in item.inactive %}
-                                <div class="section-list-item">{{ i }}</div>
-                            {% endfor %}
-                        </div>
-                    </div>
+                        <div class="overview-graphic-line-hor"></div>
 
-                    {% elsif item.status == "current" %}
-                    <div class="overview-section">
-                        <div class="overview-graphic-line-upper"></div>
-                        <div class="overview-graphic-line-lower"></div>
-                        <a class="overview-graphic-circle-wrapper">
-                            <div class="overview-graphic-circle outer"></div>
-                            <div class="overview-graphic-circle"></div>
-                        </a>
-                        <a class="btn overview-add-section-button top"><i class="material-icons">add</i>새 항목 추가하기</a>
-                        <div class="overview-section-title">{{ item.question }}</div>
-                        <a class="btn overview-next-button">다음 단계<i class="material-icons">keyboard_arrow_right</i></a>
-                        <div class="overview-section-list">
-                            {% for i in item.items %}
-                            <div class="section-list-item active">
-                                <a class="list-item-like"><i class="material-icons">thumb_up</i></a>
-                                <a class="list-item-delete"><i class="material-icons">delete</i></a>
+                        <div class="overview-section">
+                            {% if item.status == "prev" %}
+                            <div class="overview-section-title">{{ item.question }} </div>
+                            <div class="overview-section-list">
+                                <div class="section-list-item active">{{ item.active }}</div>
+                                {% for i in item.inactive %}
+                                    <div class="section-list-item">{{ i }}</div>
+                                {% endfor %}
+                            </div>
 
-                                <div class="section-item-content">
-                                    <div class="section-item-bar-wrapper">
-                                    {% assign total = item.total | plus: 0 %}
-                                    {% assign vote = i.vote | times: 100 %}
-                                    {% assign vote_percent = vote | divided_by: total %}
-                                    <div class="section-item-bar" style="width: {{ vote_percent }}%"></div>
+                            {% elsif item.status == "current" %}
+                            <!-- <a class="btn overview-next-button"
+                                *ngIf="chatService.amIModerator() && isCurrentTopic(topicName)"
+                                (click)="topicCompletedExecute(topicName)"
+                            >
+                                다음 단계<i class="material-icons">keyboard_arrow_right</i>
+                            </a> -->
+
+                            <div class="overview-section-title">{{ item.question }}</div>
+
+                            <div class="overview-section-list">
+                                {% for i in item.items %}
+                                <div class="section-list-item">
+                                    <a class="list-item-like"><i class="material-icons">thumb_up</i></a>
+                                    <!-- <a class="list-item-delete"><i class="material-icons">delete</i></a> -->
+
+                                    <div class="section-item-content">
+                                        <div class="section-item-bar-wrapper">
+                                            {% assign total = item.total | plus: 0 %}
+                                            {% assign vote = i.vote | times: 100 %}
+                                            {% assign vote_percent = vote | divided_by: total %}
+                                            <div class="section-item-bar" style="width: {{ vote_percent }}%"></div>
+                                        </div>
+                                        <div class="section-item-text">{{ i.text }}</div>
+                                        <div class="section-item-population">({{ i.vote }}/{{ item.total }})</div>
                                     </div>
-                                    <div class="section-item-text">{{ i.text }}</div>
-                                    <div class="section-item-population">({{ i.vote }}/{{ item.total }})</div>
+                                </div>
+                                {% endfor %}
+                                <div class="input-container">
+                                    <input class="input-list-new" type="text" placeholder="원인을 입력해보세요">
                                 </div>
                             </div>
-                            {% endfor %}
-                            <div class="input-container">
-                                <input class="input-list-new" type="text" placeholder="한계점은 ... 입니다">
-                            </div>
+
+                            {% else %}
+                            <div class="overview-section-title">{{ item.question }}</div>
+                            {% endif %}
+
                         </div>
-                        <a class="btn overview-add-section-button bottom"><i class="material-icons">add</i>새 항목 추가하기</a>
-                    </div>
 
-                    {% else %}
-                    <div class="overview-section">
-                        <div class="overview-graphic-line-upper"></div>
-                        <div class="overview-graphic-line-lower"></div>
-                        <a class="overview-graphic-circle-wrapper">
-                            <div class="overview-graphic-circle"></div>
-                        </a>
-                        <div class="overview-section-title">어떤 한계점이 제일 문제입니까?</div>
                     </div>
-
-                    {% endif %}
+                    
+                    {% endfor %}
                 </div>
-                
                 {% endfor %}
-
-                
-                
             </div>
         </div>
     </div>

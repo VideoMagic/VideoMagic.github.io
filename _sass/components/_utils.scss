@@ -1,3 +1,18 @@
 .hide {
   display: none !important;
 }
+
+.enjoyhint_next_btn, .enjoyhint_skip_btn  {
+  color: rgba(255,255,255,1);
+  background: #1ecd97;
+}
+
+.kineticjs-content canvas {
+  opacity: .7 !important;
+}
+
+.enjoy_hint_label {
+  background: rgba(0,0,0,0.8);
+  padding: 1rem 1.5rem;
+  font-weight: 200;
+}

@@ -1,42 +1,64 @@
 [
-    {
-        "status": "prev",
-        "question": "목표는 무엇입니까?",
-        "active": "쾌적한 보행 환경 만들기",
-        "inactive": ["주차 공간 부족하지 않게 만들기"]
+    [
+        {
+            "status": "prev",
+            "question": "이 문제가 없는 최상의 상태를 한문장으로 적으면 무엇입니까?",
+            "active": "주차 공간 부족하지 않은 상태",
+            "inactive": ["쾌적한 보행 환경", "주차 질서가 정돈된 상태"]
 
-    },
-    {
-        "status": "prev",
-        "question": "목표를 위한 행동/제도/프로세스는 무엇입니까?",
-        "active": "주차 단속원이 주차단속을 한다",
-        "inactive": []
-    },
-    {
-        "status": "prev",
-        "question": "기존 제도의 한계점은 무엇입니까?",
-        "active": "잘 안 된다",
-        "inactive": ["퇴근 후에는 잘 단속하지 않는다", "신고가 안 들어오면 자발적으로 단속을 하지 않는다"]
-    },
-    {
-        "status": "current",
-        "question": "한계점들을 분류해봅시다",
-        "total": 3,
-        "items": [
-            {
-                "text": "단속 시간 문제",
-                "vote": 2
-            },
-            {
-                "text": "자발적 단속 의지가 없음",
-                "vote": 1
-            }
-        ]
-    },
-    {
-        "status": "later",
-        "question": "어떤 한계점이 제일 문제입니까?",
-    }
-    
-    
+        },
+        {
+            "status": "current",
+            "question": "최상의 상태를 막는 원인은 무엇입니까?",
+            "total": 5,
+            "items": [
+            ]
+        },
+        {
+            "status": "later",
+            "question": "그 원인의 증거는 무엇입니까?"
+        }
+    ],
+
+    [
+        {
+            "status": "later",
+            "question": "그 원인의 증거는 무엇입니까?"
+        },
+        {
+            "status": "later",
+            "question": "어떤 해결책이 있습니까?"
+        },
+        {
+            "status": "later",
+            "question": "해결책의 장점은 무엇인가요?"
+        },
+        {
+            "status": "later",
+            "question": "해결책의 단점은 무엇인가요?"
+        },
+        {
+            "status": "later",
+            "question": "다른 해결책보다 이 해결책이 나은 이유는 무엇인가요?"
+        }
+    ],
+
+    [
+        {
+            "status": "later",
+            "question": "다른 해결책보다 이 해결책이 나은 이유는 무엇인가요?"
+        },
+        {
+            "status": "later",
+            "question": "어떤 행동을 취하면 좋을까요?"
+        },
+        {
+            "status": "later",
+            "question": "행동 계획을 위해 무엇을 정해볼까요?"
+        },
+        {
+            "status": "later",
+            "question": "행동 계획"
+        }
+    ]
 ]
