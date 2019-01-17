@@ -24,6 +24,8 @@ input, .btn { box-sizing: content-box; }
 
 .enjoy_hint_label { background: rgba(0, 0, 0, 0.8); padding: 1rem 1.5rem; font-weight: 200; }
 
+.enjoy_hint_label, .enjoyhint_svg_wrapper, .enjoyhint_next_btn { transition: transform .5s ease-in-out; }
+
 .row { display: flex; height: 100%; }
 
 .col { position: relative; }

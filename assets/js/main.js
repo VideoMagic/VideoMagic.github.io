@@ -21,7 +21,7 @@ var enjoyhint_instance = new EnjoyHint({
     }
 });
 
-var isModerator = false;
+var amModerator = false;
 
 var tabItems = Array.from(document.querySelectorAll(".overview-tab-item"));
 var questions = Array.from(document.querySelectorAll(".overview-sections-wrapper"))
@@ -39,16 +39,19 @@ tabItems.forEach(function(ele, i) {
     }
 });
 
-input.onkeypress = function(e) {
-    if (e.keyCode == 13) {
-        addItem(input.value);
-        input.value = "";
+if (input) {
+    input.onkeypress = function(e) {
+        if (e.keyCode == 13) {
+            addItem(input.value);
+            input.value = "";
+            return false;
+        }
     }
 }
 
 chatInput.onkeypress = function(e) {
     if (e.keyCode == 13) {
-        addChat(chatInput.value);
+        addChat(chatInput.value, false);
         chatInput.value = "";
         return false;
     }
@@ -65,14 +68,19 @@ function addItem(val) {
     document.querySelector(".current .overview-section-list").insertBefore(item, document.querySelector(".input-container"));
 }
 
-function addChat(val) {
+function addChat(val, isModerator) {
     var item = document.createElement("div");
+    var chatroom = document.querySelector(".chatroom-content-wrapper");
     var user = (isModerator) ? "사회" : "P2";
+    var userClass = (isModerator == amModerator) ? "current" : "";
+    if (isModerator) userClass += " moderator";
 
     item.className = "chatroom-utterances-wrapper";
-    item.innerHTML = '<div class="chatroom-utterances-container"> <div class="user-box current">' + user + '</div> <div class="chatroom-utterances-text">' 
+    item.innerHTML = '<div class="chatroom-utterances-container"> <div class="user-box ' + userClass + '">' + user + '</div> <div class="chatroom-utterances-text">' 
         + val + '</div></div>';
-    document.querySelector(".chatroom-content-wrapper").appendChild(item);
+
+    chatroom.appendChild(item);
+    item.scrollIntoView(false);
 }
 
 function makeTabsInactive() {

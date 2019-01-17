@@ -32,29 +32,23 @@
                 <div id="question{{forloop.index0}}" class="overview-sections-wrapper {% if forloop.index0 != 0 %} hide {% endif %}">
 
                     {% for item in overview %}
-                    <div class="overview-section-container {{item.status}}">
+                    <div class="overview-section-container {% if condition != 1 %} {{item.status}} {% endif %}">
 
                         <div class="overview-graphic-line-upper"></div>
                         <div class="overview-graphic-line-lower"></div>
                         <div class="overview-graphic-line-hor"></div>
 
                         <div class="overview-section">
-                            {% if item.status == "prev" %}
-                            <div class="overview-section-title">{{ item.question }} </div>
-                            <div class="overview-section-list">
-                                <div class="section-list-item active">{{ item.active }}</div>
-                                {% for i in item.inactive %}
-                                    <div class="section-list-item">{{ i }}</div>
-                                {% endfor %}
-                            </div>
+                            {% if condition == 1 or item.status == "later" %}
+                            <div class="overview-section-title">{{ item.question }}</div>
 
                             {% elsif item.status == "current" %}
-                            <!-- <a class="btn overview-next-button"
-                                *ngIf="chatService.amIModerator() && isCurrentTopic(topicName)"
-                                (click)="topicCompletedExecute(topicName)"
-                            >
-                                다음 단계<i class="material-icons">keyboard_arrow_right</i>
-                            </a> -->
+
+                                {% if condition == 3 %}
+                                <a class="btn overview-next-button">
+                                    다음 단계<i class="material-icons">keyboard_arrow_right</i>
+                                </a>
+                                {% endif %}
 
                             <div class="overview-section-title">{{ item.question }}</div>
 
@@ -82,7 +76,13 @@
                             </div>
 
                             {% else %}
-                            <div class="overview-section-title">{{ item.question }}</div>
+                            <div class="overview-section-title">{{ item.question }} </div>
+                            <div class="overview-section-list">
+                                <div class="section-list-item active">{{ item.active }}</div>
+                                {% for i in item.inactive %}
+                                    <div class="section-list-item">{{ i }}</div>
+                                {% endfor %}
+                            </div>
                             {% endif %}
 
                         </div>

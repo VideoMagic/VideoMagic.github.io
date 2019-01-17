@@ -1,5 +1,5 @@
 ---
-layout: second
-title: Condition A
+layout: first
+title: Scenario 1
 permalink: /1/
 ---

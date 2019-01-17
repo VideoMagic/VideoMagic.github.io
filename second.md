@@ -3,6 +3,6 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: second
-title: Condition B/C & Participant
+title: Scenario 2
 permalink: /2/
 ---

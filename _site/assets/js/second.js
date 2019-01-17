@@ -1,4 +1,3 @@
-
 var enjoyhint_script_steps = [
     {
         "next .overview-wrapper": "이곳은 토의의 개요를 볼 수 있는<br> Overview 탭입니다.",
@@ -62,7 +61,8 @@ var enjoyhint_script_steps = [
             }, 1010)
 
         }
-    },{
+    },
+    {
         "next .chatroom-container" : "이곳은 토의가 이루어질 채팅창입니다.",
         showSkip: false,
         onBeforeStart: function() {
@@ -79,21 +79,40 @@ var enjoyhint_script_steps = [
 
             // add some chats
             var chats = Array.from(document.querySelectorAll(".chatroom-utterances-wrapper.hide"));
-            chats.forEach(function(ele, i) {
+            for (const [i, ele] of chats.entries()) {
                 setTimeout(function() {
                     ele.classList.remove("hide");
                 }, i * 100);
-            })
+
+                if (ele.classList.contains("evidence"))
+                    break;
+            }
         }
-    },{
-        "key .chatbox-input-wrapper" : "사회자의 다음 단계로 넘어가겠냐는 제안에 답변해보세요!",
-        keyCode: 13,
+    },
+    {
+        "click .chatroom-utterances-wrapper.evidence" : "특정 메시지 위에 마우스를 두면, '후보 등록' 버튼이 나타납니다.<br>이 버튼을 클릭하면 해당 메시지를 투표 후보로 올릴 수 있습니다.",
         showSkip: false,
         onBeforeStart: function() {
             document.querySelector(".enjoyhint_svg_wrapper").style.transform = "";
             document.querySelector(".enjoyhint_next_btn").style.transform = "";
             
+        }
+    },
+
+    {
+        "key .chatbox-input-wrapper" : "사회자의 다음 단계로 넘어가겠냐는 제안에 답변해보세요!",
+        keyCode: 13,
+        showSkip: false,
+        onBeforeStart: function() {
             // add some chats
+            var chats = Array.from(document.querySelectorAll(".chatroom-utterances-wrapper.hide"));
+            chats.forEach(function(ele, i) {
+                setTimeout(function() {
+                    ele.classList.remove("hide");
+                }, i * 100);
+            })
+
+            // give a placeholder
             var example = "네, 넘어가는 것 좋아요!";
             Array.from(example).forEach(function(ele, i) {
                 setTimeout(function(){

@@ -8,8 +8,8 @@
         </div>
         <div class="chatroom-cover-text-group">
             <div class="cover-subtitle">역할</div>
-            <div class="cover-title">사회자</div>
-            <div class="cover-explanation">토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다.</div>
+            <div class="cover-title">토의 참여자</div>
+            <div class="cover-explanation">주어진 문제를 해결하기 위한 토의에 참여해 주십시오.</div> <!-- 토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다. -->
         </div>
         <div class="button-wrapper"><a href="" class="button-start">실제 토의 시작하기</a></div> <!-- TODO: REAL URL -->
         </div>
@@ -57,9 +57,11 @@
                 </div>
             </div>
 
+            {% if condition != 1 %}
             <div class="chatroom-division">
                 <span>최상의 상태를 막는 원인은 무엇입니까?</span>
             </div>
+            {% endif %}
 
             <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
@@ -89,17 +91,24 @@
                 </div>
             </div>
 
-            <div class="chatroom-utterances-wrapper hide">
+            <div class="chatroom-utterances-wrapper evidence hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P4</div>
-                    <div class="chatroom-utterances-text">양쪽 의견 모두 일리가 있네요.</div>
+                    <div class="chatroom-utterances-text">
+                        {% if condition == 1%} 양쪽 의견 모두 일리가 있네요. 
+                        {% else %} 주거 지역에의 주차 밀집 {% endif %}
+                    </div>
                 </div>
             </div>
             
             <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box moderator">사회</div>
-                    <div class="chatroom-utterances-text">투표가 어느 정도 진행된 것 같은데 다음 단계로 넘어갈까요?</div>
+                    <div class="chatroom-utterances-text">
+                        {% if condition == 1%} 의견이 어느 정도 모아진 것 같은데 
+                        {% else %} 투표가 어느 정도 진행된 것 같은데 {% endif %}
+                        다음 단계로 넘어갈까요? 
+                    </div>
                 </div>
             </div>
 
@@ -108,7 +117,7 @@
     <div class="chatroom-chatbox-container">
         <div class="chatbox-input-wrapper">
             <textarea class="chatbox-input" type="text" placeholder="메세지 입력하기"></textarea>
-            <div class="chatbox-sub-text">P2가 입력 중입니다...</div>
+            <div class="chatbox-sub-text hide">P2가 입력 중입니다...</div>
         </div>
     </div>
 </div>

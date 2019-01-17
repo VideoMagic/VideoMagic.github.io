@@ -16,3 +16,8 @@
   padding: 1rem 1.5rem;
   font-weight: 200;
 }
+
+.enjoy_hint_label, .enjoyhint_svg_wrapper, .enjoyhint_next_btn {
+  // transform: translateX(0) rotateY(0);
+  transition: transform .5s ease-in-out;
+}
