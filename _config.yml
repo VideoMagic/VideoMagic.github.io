@@ -36,6 +36,8 @@ exclude:
 plugins:
   - jekyll-seo-tag
   - jekyll-minifier
+  - jekyll-babel
+  - github-pages
 
 #sass:
 #  style: compressed

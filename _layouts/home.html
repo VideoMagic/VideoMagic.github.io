@@ -1,16 +1,56 @@
 ---
 layout: default
 ---
-
-<div class="row">
-    <a class="title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-
-    <div class="col col-3">
-        {% include overview.html %}
-    </div>
-    <div class="col col-5">
-        {% include chat.html %}
-    </div>
+<style>
+.yellow {
+    background-color: lemonchiffon;
+}
+.green {
+    background-color: lightgreen;
+}
+.blue {
+    background-color:lightskyblue;
+}
+</style>
+<div>
+    <h2>
+        <a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+    </h2>
+</div>
+<div>
+    <table>
+        <tr>
+            <th>분류</th>
+            <th>Condition A</th>
+            <th>Condition B</th>
+            <th>Condition C</th>
+        </tr>
+        <tr>
+            <td><b>Participant</b></td>
+            <td class="yellow">
+                <a href="{{ '/1' | relative_url }}">Scenario 1</a>
+            </td>
+            <td class="green">
+                <a href="{{ '/2' | relative_url }}">Scenario 2</a>
+            </td>
+            <td class="green">
+                <a href="{{ '/2' | relative_url }}">Scenario 2</a>
+            </td>
+        </tr>
+        <tr>
+            <td><b>Moderator</b></td>
+            <td class="yellow">
+                <a href="{{ '/1' | relative_url }}">Scenario 1</a>
+            </td>
+            <td class="green">
+                <a href="{{ '/2' | relative_url }}">Scenario 2</a>
+            </td>
+            <td class="blue">
+                <a href="{{ '/3' | relative_url }}">Scenario 3</a>
+            </td>
+        </tr>
+    </table>
+    
 </div>
 
 
