@@ -24,11 +24,11 @@ var enjoyhint_script_steps = [
         showSkip: false
     },
     {
-        "next #question0" : "현재는 흰색 배경의 <br>'최상의 상태를 막는 원인은 무엇입니까?'라는 질문에 대해 <br>토의가 이루어지고 있습니다.",
+        "next #question0" : "현재는 <b>흰색 배경</b>의 <br>'최상의 상태를 막는 원인은 무엇입니까?'라는 질문에 대해 <br>토의가 이루어지고 있습니다.",
         showSkip: false
     },
     {
-        "key .input-list-new" : "엔터를 눌러 원인을 입력해보세요!",
+        "key .input-list-new" : "<b>엔터</b>를 눌러 원인을 입력해보세요!",
         keyCode: 13,
         showSkip: false,
         onBeforeStart: function() {
@@ -43,7 +43,7 @@ var enjoyhint_script_steps = [
         }
     },
     {
-        "custom .overview-section-container.current" : "다른 토의자들도 원인을 추가하였습니다. 적절한 원인에 투표를 해주세요. 중복 투표가 가능합니다.",
+        "custom .overview-section-container.current" : "다른 토의자들도 원인을 추가하였습니다. 적절한 원인에 <b>투표</b>를 해주세요. 중복 투표가 가능합니다.",
         event: "vote",
         showSkip: false,
         onBeforeStart: function() {
@@ -63,7 +63,7 @@ var enjoyhint_script_steps = [
         }
     },
     {
-        "next .chatroom-container" : "이곳은 토의가 이루어질 채팅창입니다.",
+        "next .chatroom-container" : "이곳은 토의가 이루어질 <b>채팅창</b>입니다.",
         showSkip: false,
         onBeforeStart: function() {
             
@@ -90,17 +90,19 @@ var enjoyhint_script_steps = [
         }
     },
     {
-        "click .chatroom-utterances-wrapper.evidence" : "특정 메시지 위에 마우스를 두면, '후보 등록' 버튼이 나타납니다.<br>이 버튼을 클릭하면 해당 메시지를 투표 후보로 올릴 수 있습니다.",
+        "click .chatroom-utterances-wrapper.evidence" : "특정 메시지 위에 마우스를 두면, 우측에 <b>'후보 등록'</b> 버튼이 나타납니다.<br>이 버튼을 클릭하면 해당 메시지를 투표 후보로 올릴 수 있습니다.",
         showSkip: false,
         onBeforeStart: function() {
             document.querySelector(".enjoyhint_svg_wrapper").style.transform = "";
             document.querySelector(".enjoyhint_next_btn").style.transform = "";
-            
         }
     },
-
     {
-        "key .chatbox-input-wrapper" : "사회자의 다음 단계로 넘어가겠냐는 제안에 답변해보세요!",
+        "next .overview-section-container.current" : "후보로 등록이 되었네요!",
+        showSkip: false
+    },
+    {
+        "key .chatbox-input-wrapper" : "사회자의 다음 단계로 넘어가겠냐는 제안에 <b>답변</b>해보세요!",
         keyCode: 13,
         showSkip: false,
         onBeforeStart: function() {
@@ -124,7 +126,7 @@ var enjoyhint_script_steps = [
         }
     },
     {
-        "next .overview-wrapper" : "다음 질문으로 넘어갔습니다. <br>지난 질문의 결과는 Overview 탭에서 <br>계속해서 확인하실 수 있습니다.",
+        "next .overview-wrapper" : "다음 질문으로 넘어갔습니다. <br><b>지난 질문의 결과</b>는 Overview 탭에서 <br>계속해서 확인하실 수 있습니다.",
         showSkip: false,
         "nextButton": {text: "Finish"},
         onBeforeStart: function() {
@@ -149,5 +151,5 @@ var enjoyhint_script_steps = [
 
     }
 ];
-enjoyhint_instance.set(enjoyhint_script_steps);
-enjoyhint_instance.run();
+
+init();

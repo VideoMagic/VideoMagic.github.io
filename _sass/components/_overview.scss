@@ -239,6 +239,9 @@ $current-top-padding: 76px;
     height: 100%;
     margin-bottom: 1rem;
     position: relative;
+    &.moderator .overview-section-title:hover {
+      cursor: pointer;
+    }
   }
 
   .overview-sections-wrapper {

@@ -87,9 +87,11 @@
       .feedback-card-message {
         margin-bottom: .2rem;
         font-size: .96rem;
-        white-space: nowrap;
+        // white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
       .feedback-card-tooltip {
         display: none;

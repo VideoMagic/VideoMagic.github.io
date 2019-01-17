@@ -12,19 +12,29 @@
 //     }
 //     $.classList.add("hide");
 // }
-var enjoyhint_instance = new EnjoyHint({
-    onEnd: function() {
-        document.querySelector(".chatroom-dark-cover").classList.remove("hide");
-    },
-    onSkip: function() {
-        document.querySelector(".chatroom-dark-cover").classList.remove("hide");
-    }
-});
+var enjoyhint_instance;
 
+function init() {
+    enjoyhint_instance = new EnjoyHint({
+        onStart: function() {
+            document.querySelector(".chatroom-dark-cover").classList.add("hide");
+        },
+        onEnd: function() {
+            document.querySelector(".chatroom-dark-cover").classList.remove("hide");
+        },
+        onSkip: function() {
+            document.querySelector(".chatroom-dark-cover").classList.remove("hide");
+        }
+    });
+    enjoyhint_instance.set(enjoyhint_script_steps);
+    enjoyhint_instance.run();
+}
 var amModerator = false;
 
 var tabItems = Array.from(document.querySelectorAll(".overview-tab-item"));
-var questions = Array.from(document.querySelectorAll(".overview-sections-wrapper"))
+var questions = Array.from(document.querySelectorAll(".overview-sections-wrapper"));
+var addButtons = Array.from(document.querySelectorAll(".btn-add"));
+
 var input = document.querySelector(".input-list-new");
 var chatInput = document.querySelector(".chatbox-input");
 
@@ -48,6 +58,13 @@ if (input) {
         }
     }
 }
+
+addButtons.forEach(function(ele) {
+    ele.onclick = function(e) {
+        let text = ele.parentElement.innerText;
+        addItem( text.substr(0, text.length - 6) );
+    }
+});
 
 chatInput.onkeypress = function(e) {
     if (e.keyCode == 13) {

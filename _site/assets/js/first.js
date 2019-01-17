@@ -24,11 +24,11 @@ var enjoyhint_script_steps = [
         showSkip: false
     },
     {
-        "next #question0" : "'문제 분석' 단계에서<br>토의자들이 답을 찾아나가야 할 질문들입니다.<br>질문 목록을 참고하며 채팅에 참여해주시면 됩니다.",
+        "next #question0" : "'문제 분석' 단계에서<br>토의자들이 답을 찾아나가야 할 질문들입니다.<br><b>질문 목록을 참고하며 채팅에 참여</b>해주시면 됩니다.",
         showSkip: false
     },
     {
-        "next .chatroom-container" : "이곳은 토의가 이루어질 채팅창입니다.",
+        "next .chatroom-container" : "이곳은 토의가 이루어질 <b>채팅창</b>입니다.",
         showSkip: false,
         onBeforeStart: function() {
             
@@ -52,7 +52,7 @@ var enjoyhint_script_steps = [
         }
     },
     {
-        "key .chatbox-input-wrapper" : "사회자의 다음 단계로 넘어가겠냐는 제안에 답변해보세요!",
+        "key .chatbox-input-wrapper" : "사회자의 다음 단계로 넘어가겠냐는 제안에 <b>답변</b>해보세요!",
         keyCode: 13,
         showSkip: false,
         onBeforeStart: function() {
@@ -71,7 +71,7 @@ var enjoyhint_script_steps = [
         }
     },
     {
-        "next .chatroom-content-wrapper" : "사회자님께서 답변을 달았네요! <br>이런 식으로 채팅에 참여하시면 됩니다.",
+        "next .chatroom-content-wrapper" : "사회자님이 답변을 달았네요! <br>이런 식으로 채팅에 참여하시면 됩니다.",
         showSkip: false,
         "nextButton": {text: "Finish"},
         onBeforeStart: function() {
@@ -87,5 +87,5 @@ var enjoyhint_script_steps = [
         }
     }
 ];
-enjoyhint_instance.set(enjoyhint_script_steps);
-enjoyhint_instance.run();
+
+init();

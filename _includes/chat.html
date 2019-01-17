@@ -11,7 +11,10 @@
             <div class="cover-title">토의 참여자</div>
             <div class="cover-explanation">주어진 문제를 해결하기 위한 토의에 참여해 주십시오.</div> <!-- 토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다. -->
         </div>
-        <div class="button-wrapper"><a href="" class="button-start">실제 토의 시작하기</a></div> <!-- TODO: REAL URL -->
+        <div class="button-wrapper">
+            <a href="" class="button-start">실제 토의 시작하기</a>
+            <a href="{{ page.url }}" class="button-start resume">튜토리얼로 돌아가기</a>
+        </div> <!-- TODO: REAL URL -->
         </div>
     </div>
     <div class="chatroom-info-container">
@@ -39,21 +42,27 @@
             <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
-                    <div class="chatroom-utterances-text">네, 저도 동의합니다!</div>
+                    <div class="chatroom-utterances-text">네, 저도 동의합니다!
+                         <div class="btn-add">후보 등록</div>
+                    </div>
                 </div>
             </div>
 
             <div class="chatroom-utterances-wrapper moderator">
                 <div class="chatroom-utterances-container">
                     <div class="user-box moderator">사회</div>
-                    <div class="chatroom-utterances-text">그러면 '주차 공간 부족하지 않은 상태'에 다들 동의하는 것으로 알고, 다음 단계 진행하겠습니다.</div>
+                    <div class="chatroom-utterances-text">그러면 '주차 공간 부족하지 않은 상태'에 다들 동의하는 것으로 알고, 다음 단계 진행하겠습니다.
+                         <div class="btn-add">후보 등록</div>
+                    </div>
                 </div>
             </div>
 
             <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P2</div>
-                    <div class="chatroom-utterances-text">네, 알겠습니다.</div>
+                    <div class="chatroom-utterances-text">네, 알겠습니다.
+                         <div class="btn-add">후보 등록</div>
+                    </div>
                 </div>
             </div>
 
@@ -66,28 +75,37 @@
             <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box moderator">사회</div>
-                    <div class="chatroom-utterances-text">이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.</div>
+                    <div class="chatroom-utterances-text">
+                        이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
+                        <div class="btn-add">후보 등록</div>
+                    </div>
                 </div>
             </div>
 
             <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box moderator">사회</div>
-                    <div class="chatroom-utterances-text">어떤 원인들이 있을까요?</div>
+                    <div class="chatroom-utterances-text">어떤 원인들이 있을까요?
+                         <div class="btn-add">후보 등록</div>
+                    </div>
                 </div>
             </div>
 
             <div class="chatroom-utterances-wrapper hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P1</div>
-                    <div class="chatroom-utterances-text">단속의 필요성이라고 생각합니다.</div>
+                    <div class="chatroom-utterances-text">단속의 필요성이라고 생각합니다.
+                         <div class="btn-add">후보 등록</div>
+                    </div>
                 </div>
             </div>
 
             <div class="chatroom-utterances-wrapper hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
-                    <div class="chatroom-utterances-text">무엇보다도 주차 공간 자체가 부족하기 때문 아닐까요?</div>
+                    <div class="chatroom-utterances-text">무엇보다도 주차 공간 자체가 부족하기 때문 아닐까요?
+                         <div class="btn-add">후보 등록</div>
+                    </div>
                 </div>
             </div>
 
@@ -97,6 +115,7 @@
                     <div class="chatroom-utterances-text">
                         {% if condition == 1%} 양쪽 의견 모두 일리가 있네요. 
                         {% else %} 주거 지역에의 주차 밀집 {% endif %}
+                        <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
             </div>
@@ -108,6 +127,7 @@
                         {% if condition == 1%} 의견이 어느 정도 모아진 것 같은데 
                         {% else %} 투표가 어느 정도 진행된 것 같은데 {% endif %}
                         다음 단계로 넘어갈까요? 
+                        <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
             </div>
