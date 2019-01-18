@@ -29,7 +29,8 @@ function init() {
     enjoyhint_instance.set(enjoyhint_script_steps);
     enjoyhint_instance.run();
 }
-var amModerator = false;
+
+var amModerator = ( document.location.pathname.includes("moderator") ) ? true : false;
 
 var tabItems = Array.from(document.querySelectorAll(".overview-tab-item"));
 var questions = Array.from(document.querySelectorAll(".overview-sections-wrapper"));
@@ -77,8 +78,11 @@ chatInput.onkeypress = function(e) {
 
 function addItem(val) {
     var item = document.createElement("div");
+    var remover = (amModerator) ? '<a class="list-item-delete"><i class="material-icons">delete</i></a>' : '';
+
     item.className = "section-list-item";
     item.innerHTML = '<a class="list-item-like"><i class="material-icons">thumb_up</i></a>'
+        + remover
         + '<div class="section-item-content"> <div class="section-item-bar-wrapper"> <div class="section-item-bar" style="width: 0%"></div> </div> <div class="section-item-text">' 
         + val
         + '</div> <div class="section-item-population">(0/5)</div>';

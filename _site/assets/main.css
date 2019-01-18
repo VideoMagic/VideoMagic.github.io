@@ -59,7 +59,7 @@ input, .btn { box-sizing: content-box; }
 .overview-wrapper .overview-section-container.current .overview-next-button .material-icons { font-size: 1.25rem; line-height: 2rem; vertical-align: sub; }
 .overview-wrapper .overview-section-container.current .overview-next-button + .overview-section-title { padding-right: 7rem; }
 .overview-wrapper .overview-section-container.current .section-list-item { color: #333; display: flex; font-size: 1rem; }
-.overview-wrapper .overview-section-container.current .section-list-item .list-item-like { padding: .125rem 0; }
+.overview-wrapper .overview-section-container.current .section-list-item .list-item-like, .overview-wrapper .overview-section-container.current .section-list-item .list-item-delete { padding: .125rem 0; }
 .overview-wrapper .overview-section-container.current .section-list-item .material-icons { color: #bdbdbd; font-size: 1.375rem; margin-right: .5rem; vertical-align: sub; }
 .overview-wrapper .overview-section-container.current .section-list-item.active .material-icons, .overview-wrapper .overview-section-container.current .section-list-item.active .section-item-population { color: #f44336; }
 .overview-wrapper .overview-section-container.current .section-list-item.active .section-item-bar { background-color: #ffeaec; }

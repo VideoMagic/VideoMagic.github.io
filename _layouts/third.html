@@ -3,13 +3,14 @@ layout: default
 ---
 
 {% assign condition = 3 %}
+{% assign isModerator = true %}
 
 <div class="row">
     <div class="col col-3">
         {% include overview.html %}
     </div>
     <div class="col col-5">
-        {% include chat.html %}
+        {% include chat_moderator.html %}
     </div>
 </div>
 

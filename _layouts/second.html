@@ -3,13 +3,22 @@ layout: default
 ---
 
 {% assign condition = 2 %}
+{% if page.url contains "moderator" %}
+    {% assign isModerator = true %}
+{% else %}
+    {% assign isModerator = false %}
+{% endif %}
 
 <div class="row">
     <div class="col col-3">
         {% include overview.html %}
     </div>
     <div class="col col-5">
-        {% include chat.html %}
+        {% if isModerator == true %}
+            {% include chat_moderator.html %}
+        {% else %}
+            {% include chat.html %}
+        {% endif %}
     </div>
 </div>
 

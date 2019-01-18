@@ -8,13 +8,13 @@
         </div>
         <div class="chatroom-cover-text-group">
             <div class="cover-subtitle">역할</div>
-            <div class="cover-title">토의 참여자</div>
-            <div class="cover-explanation">주어진 문제를 해결하기 위한 토의에 참여해 주십시오.</div> <!-- 토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다. -->
+            <div class="cover-title">사회자</div>
+            <div class="cover-explanation">토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다.</div>
         </div>
         <div class="button-wrapper">
-            <a href="" class="button-start">실제 토의 시작하기</a>
+            <a href="" class="button-start">실제 토의 시작하기</a> <!-- TODO: REAL URL -->
             <a href="{{ page.url }}" class="button-start resume">튜토리얼 다시 보기</a>
-        </div> <!-- TODO: REAL URL -->
+        </div> 
         </div>
     </div>
     <div class="chatroom-info-container">
@@ -22,9 +22,9 @@
         <div class="chatroom-users-container">
             <div class="chatroom-users-wrapper">
                 <span class="chatroom-info-title">참가자</span>
-                <div class="user-box moderator">사회</div>
+                <div class="user-box moderator current">사회</div>
                 <div class="user-box">P1</div>
-                <div class="user-box current">P2</div>
+                <div class="user-box">P2</div>
                 <div class="user-box">P3</div>
                 <div class="user-box">P4</div>
             </div>
@@ -35,6 +35,63 @@
         </div>
         </div>
     </div>
+
+    {% if condition == 3 %}
+    <!-- Feedback area for moderator only -->
+    <div class="chatroom-content-container">
+        <div class="feedback-wrapper">
+            <div class="feedback-default">
+                <i class="material-icons">done</i>이곳에 토론에 도움이 되는 도움말이 표시됩니다
+            </div>
+
+            <div class="feedback-card hide">
+                <a class="feedback-card-close" (click)="chatService.removeAdvice(advice)">
+                    <i class="material-icons">clear</i>
+                </a>
+                <div class="feedback-card-before" (click)="chatService.sendChatMessage(advice.message); chatService.removeAdvice(advice);" *ngIf="advice.sent == false && !advice.kind.contains('-done')">
+                    <div class="feedback-card-message" [class.tooltip]="advice.message.length > 20">
+                        다음 단계로 넘어갈까요?
+                    </div>
+                    <div class="feedback-card-reason">
+                        <i class="material-icons">info</i> 의견이 어느 정도 모아진 것 같습니다
+                    </div>
+                    <div class="feedback-card-tooltip">
+                        다음 단계로 넘어갈까요?
+                    </div>
+                </div>
+                <div class="feedback-card-after hide">
+                    <div class="feedback-card-reason">
+                        <i class="material-icons">info</i> 채팅 메세지 입력부분에 내용이 옮겨졌습니다
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-card hide">
+                <a class="feedback-card-close">
+                    <i class="material-icons">clear</i>
+                </a>
+                <div class="feedback-card-before">
+                    <div class="feedback-card-message tooltip">
+                        이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
+                    </div>
+                    <div class="feedback-card-reason">
+                        <i class="material-icons">info</i> 이번 단계를 소개해보세요
+                    </div>
+                    <div class="feedback-card-tooltip">
+                        {이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
+                    </div>
+                </div>
+                <div class="feedback-card-after hide">
+                    <div class="feedback-card-reason">
+                        <i class="material-icons">info</i> 채팅 메세지 입력부분에 내용이 옮겨졌습니다
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {% endif %}
+
     <div class="chatroom-content-container">
 
         <div class="chatroom-content-wrapper">
@@ -50,7 +107,7 @@
 
             <div class="chatroom-utterances-wrapper moderator">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box moderator">사회</div>
+                    <div class="user-box moderator current">사회</div>
                     <div class="chatroom-utterances-text">그러면 '주차 공간 부족하지 않은 상태'에 다들 동의하는 것으로 알고, 다음 단계 진행하겠습니다.
                          <div class="btn-add">후보 등록</div>
                     </div>
@@ -74,7 +131,7 @@
 
             <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box moderator">사회</div>
+                    <div class="user-box moderator current">사회</div>
                     <div class="chatroom-utterances-text">
                         이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
                         <div class="btn-add">후보 등록</div>
@@ -84,7 +141,7 @@
 
             <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box moderator">사회</div>
+                    <div class="user-box moderator current">사회</div>
                     <div class="chatroom-utterances-text">어떤 원인들이 있을까요?
                          <div class="btn-add">후보 등록</div>
                     </div>
@@ -122,9 +179,9 @@
             
             <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box moderator">사회</div>
+                    <div class="user-box moderator current">사회</div>
                     <div class="chatroom-utterances-text">
-                        {% if condition == 1%} 의견이 어느 정도 모아진 것 같은데 
+                        {% if condition == 1 %} 의견이 어느 정도 모아진 것 같은데 
                         {% else %} 투표가 어느 정도 진행된 것 같은데 {% endif %}
                         다음 단계로 넘어갈까요? 
                         <div class="btn-add">후보 등록</div>
