@@ -94,9 +94,12 @@ function addChat(val, isModerator) {
     var chatroom = document.querySelector(".chatroom-content-wrapper");
     var user = (isModerator) ? "사회" : "P2";
     var userClass = (isModerator == amModerator) ? "current" : "";
-    if (isModerator) userClass += " moderator";
+    if (isModerator) {
+        userClass += " moderator";
+        item.className += "moderator ";
+    }
 
-    item.className = "chatroom-utterances-wrapper";
+    item.className = " chatroom-utterances-wrapper";
     item.innerHTML = '<div class="chatroom-utterances-container"> <div class="user-box ' + userClass + '">' + user + '</div> <div class="chatroom-utterances-text">' 
         + val + '</div></div>';
 
