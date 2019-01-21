@@ -1,6 +1,6 @@
 var enjoyhint_script_steps = [
     {
-        "next .overview-wrapper": "이곳은 토의의 개요를 볼 수 있는<br> Overview 탭입니다.",
+        "next .overview-wrapper": "이곳은 <b>토의의 개요</b>를 볼 수 있는<br> 탭입니다.",
         showSkip: false
     },
     {
@@ -12,7 +12,7 @@ var enjoyhint_script_steps = [
         showSkip: false
     },
     {
-        "click #step1" : "'해결책 토의' 단계를 클릭해서 미리 살펴보세요!",
+        "click #step1" : "'해결책 토의' 단계를 <b>클릭</b>해서 미리 살펴보세요!",
         showSkip: false
     },
     {
@@ -20,7 +20,7 @@ var enjoyhint_script_steps = [
         showSkip: false
     },
     {
-        "click #step0" : "다시 '문제 분석' 단계로 가보죠.",
+        "click #step0" : "다시 '문제 분석' 단계를 <b>클릭</b>해서 돌아가 볼까요?.",
         showSkip: false
     },
     {
@@ -52,7 +52,7 @@ var enjoyhint_script_steps = [
         }
     },
     {
-        "key .chatbox-input-wrapper" : "사회자의 다음 단계로 넘어가겠냐는 제안에 <b>답변</b>해보세요!",
+        "key .chatbox-input-wrapper" : "사회자의 다음 단계로 넘어가겠냐는 제안에<br><b>엔터</b>를 눌러 <b>답변</b>해보세요!",
         keyCode: 13,
         showSkip: false,
         onBeforeStart: function() {
