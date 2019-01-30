@@ -4,5 +4,5 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: third
 title: Scenario 3
-permalink: /3/
+permalink: /3/moderator/
 ---

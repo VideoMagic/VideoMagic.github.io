@@ -2,9 +2,9 @@
     <div class="chatroom-dark-cover hide">
         <div class="chatroom-dark-cover-content">
         <div class="chatroom-cover-text-group">
-            <div class="cover-subtitle">실제 토의 주제</div>
-            <div class="cover-title">대전 시청의 주차 관리 문제</div>
-            <div class="cover-explanation">대전시청의 주차 관리와 관련해 어떤 문제가 있고, 이를 해결하려면 어떻게 해야 될 지 논의해봅시다.</div>
+            <div class="cover-subtitle">토의 목표</div>
+            <div class="cover-title">제한 시간 20분 동안 주어진 문제에 대하여<br>적어도 '해결책 토의'까지 완료하기</div>
+            <div class="cover-explanation">주어진 문제를 분석하고, 이를 해결하려면 어떻게 해야 될지 논의해봅시다.</div>
         </div>
         <div class="chatroom-cover-text-group">
             <div class="cover-subtitle">역할</div>
@@ -12,11 +12,13 @@
             <div class="cover-explanation">토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다.</div>
         </div>
         <div class="button-wrapper">
-            <a href="" class="button-start">실제 토의 시작하기</a> <!-- TODO: REAL URL -->
+            <input id="roomNum" type="number" placeholder="도우미가 공지한 방 번호를 입력하세요." autofocus>
+            <a id="goToRoom" class="button-start">실제 토의 시작하기</a>
             <a href="{{ page.url }}" class="button-start resume">튜토리얼 다시 보기</a>
-        </div> 
+        </div>
         </div>
     </div>
+    
     <div class="chatroom-info-container">
         <div class="chatroom-info-wrapper">
         <div class="chatroom-users-container">
@@ -31,20 +33,21 @@
         </div>
         <div class="chatroom-time-container">
             <div class="chatroom-info-title">총 토의시간</div>
-            <div class="chatroom-info-content">12:03</div>
+            <div class="chatroom-info-content">00:00</div>
         </div>
         </div>
     </div>
 
-    {% if condition == 3 %}
-    <!-- Feedback area for moderator only -->
     <div class="chatroom-content-container">
+
+        {% if condition == 3 %}
+        <!-- Feedback area for moderator only -->
         <div class="feedback-wrapper">
             <div class="feedback-default">
                 <i class="material-icons">done</i>이곳에 토론에 도움이 되는 도움말이 표시됩니다
             </div>
 
-            <div class="feedback-card hide">
+            <!-- <div class="feedback-card hide">
                 <a class="feedback-card-close" (click)="chatService.removeAdvice(advice)">
                     <i class="material-icons">clear</i>
                 </a>
@@ -59,12 +62,7 @@
                         다음 단계로 넘어갈까요?
                     </div>
                 </div>
-                <div class="feedback-card-after hide">
-                    <div class="feedback-card-reason">
-                        <i class="material-icons">info</i> 채팅 메세지 입력부분에 내용이 옮겨졌습니다
-                    </div>
-                </div>
-            </div>
+            </div> -->
 
             <div class="feedback-card hide">
                 <a class="feedback-card-close">
@@ -72,43 +70,50 @@
                 </a>
                 <div class="feedback-card-before">
                     <div class="feedback-card-message tooltip">
-                        이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
+                        이번 단계는 전 단계에서 합의한 문제 원인의 증거가 무엇인지에 대해 논의해보도록 하겠습니다.
                     </div>
                     <div class="feedback-card-reason">
                         <i class="material-icons">info</i> 이번 단계를 소개해보세요
                     </div>
-                    <div class="feedback-card-tooltip">
-                        {이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
-                    </div>
-                </div>
-                <div class="feedback-card-after hide">
-                    <div class="feedback-card-reason">
-                        <i class="material-icons">info</i> 채팅 메세지 입력부분에 내용이 옮겨졌습니다
-                    </div>
+                    <!-- <div class="feedback-card-tooltip">
+                        이번 단계는 전 단계에서 합의한 문제 원인의 증거가 무엇인지에 대해 논의해보도록 하겠습니다.
+                    </div> -->
                 </div>
             </div>
 
         </div>
-    </div>
-    {% endif %}
-
-    <div class="chatroom-content-container">
+        {% endif %}
 
         <div class="chatroom-content-wrapper">
 
             <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box">P3</div>
-                    <div class="chatroom-utterances-text">네, 저도 동의합니다!
+                    <div class="user-box">P1</div>
+                    <div class="chatroom-utterances-text">다음단계 갑시다
                          <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
             </div>
 
-            <div class="chatroom-utterances-wrapper moderator">
+            <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box moderator current">사회</div>
-                    <div class="chatroom-utterances-text">그러면 '주차 공간 부족하지 않은 상태'에 다들 동의하는 것으로 알고, 다음 단계 진행하겠습니다.
+                    <div class="user-box">P2</div>
+                    <div class="chatroom-utterances-text">그러죠 ㄱㄱ
+                         <div class="btn-add">후보 등록</div>
+                    </div>
+                </div>
+            </div>
+
+            {% if condition == 2 %}
+            <div class="chatroom-division">
+                <span>최상의 상태를 막는 원인은 무엇입니까?</span>
+            </div>
+            {% endif %}
+
+            <div class="chatroom-utterances-wrapper">
+                <div class="chatroom-utterances-container">
+                    <div class="user-box">P3</div>
+                    <div class="chatroom-utterances-text">최상의 상태를 막는 원인이라.. 무엇이 있을까요?
                          <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
@@ -117,32 +122,16 @@
             <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P4</div>
-                    <div class="chatroom-utterances-text">네, 알겠습니다.
+                    <div class="chatroom-utterances-text">그러게요.
                          <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
             </div>
 
-            {% if condition != 1 %}
-            <div class="chatroom-division">
-                <span>최상의 상태를 막는 원인은 무엇입니까?</span>
-            </div>
-            {% endif %}
-
-            <div class="chatroom-utterances-wrapper moderator hide">
+            <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box moderator current">사회</div>
-                    <div class="chatroom-utterances-text">
-                        이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
-                        <div class="btn-add">후보 등록</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chatroom-utterances-wrapper moderator hide">
-                <div class="chatroom-utterances-container">
-                    <div class="user-box moderator current">사회</div>
-                    <div class="chatroom-utterances-text">어떤 원인들이 있을까요?
+                    <div class="user-box">P4</div>
+                    <div class="chatroom-utterances-text">최상의 상태는 '주차 공간이 부족하지 않은 상태'로 합의했는데, 주차 공간이 부족한 원인이 뭘까요?
                          <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
@@ -152,6 +141,15 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P1</div>
                     <div class="chatroom-utterances-text">단속의 필요성이라고 생각합니다.
+                         <div class="btn-add">후보 등록</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatroom-utterances-wrapper hide">
+                <div class="chatroom-utterances-container">
+                    <div class="user-box">P2</div>
+                    <div class="chatroom-utterances-text">좋네요, 단속 너무 안하는 것 같아요.
                          <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
@@ -170,24 +168,41 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P4</div>
                     <div class="chatroom-utterances-text">
-                        {% if condition == 1%} 양쪽 의견 모두 일리가 있네요. 
+                        {% if condition == 1 %} 공간도 부족하지만, 더 큰 원인은 단속의 문제 같네요. 
                         {% else %} 주거 지역에의 주차 밀집 {% endif %}
                         <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
             </div>
-            
-            <div class="chatroom-utterances-wrapper moderator hide">
+
+            <div class="chatroom-utterances-wrapper hide">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box moderator current">사회</div>
+                    <div class="user-box">P1</div>
                     <div class="chatroom-utterances-text">
                         {% if condition == 1 %} 의견이 어느 정도 모아진 것 같은데 
                         {% else %} 투표가 어느 정도 진행된 것 같은데 {% endif %}
-                        다음 단계로 넘어갈까요? 
+                        다음 단계로 넘어가는 거 어떨까요?
                         <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
             </div>
+
+            <div class="chatroom-utterances-wrapper hide">
+                <div class="chatroom-utterances-container">
+                    <div class="user-box">P3</div>
+                    <div class="chatroom-utterances-text">
+                        네, 저도 단속의 필요성에 동의합니다. 다음 단계로 넘어가죠. 사회자님?
+                        <div class="btn-add">후보 등록</div>
+                    </div>
+                </div>
+            </div>
+            
+
+            {% if condition == 2 %}
+            <div class="chatroom-division hide">
+                <span>그 원인의 증거는 무엇입니까?</span>
+            </div>
+            {% endif %}
 
         </div>
     </div>

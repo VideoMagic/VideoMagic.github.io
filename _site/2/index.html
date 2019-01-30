@@ -69,6 +69,9 @@
                 <div id="question0" class="overview-sections-wrapper ">
 
                     
+                    
+                    
+
                     <div class="overview-section-container  prev ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -91,8 +94,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  current ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -118,8 +126,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -135,6 +148,8 @@
                         </div>
 
                     </div>
+
+                    
                     
                     
                 </div>
@@ -142,6 +157,9 @@
                 <div id="question1" class="overview-sections-wrapper  hide ">
 
                     
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -157,8 +175,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -174,8 +197,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -191,8 +219,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -208,8 +241,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -225,6 +263,8 @@
                         </div>
 
                     </div>
+
+                    
                     
                     
                 </div>
@@ -232,6 +272,9 @@
                 <div id="question2" class="overview-sections-wrapper  hide ">
 
                     
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -247,8 +290,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -264,8 +312,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -281,8 +334,13 @@
                         </div>
 
                     </div>
+
                     
                     
+                    
+                    
+                    
+
                     <div class="overview-section-container  later ">
 
                         <div class="overview-graphic-line-upper"></div>
@@ -298,6 +356,8 @@
                         </div>
 
                     </div>
+
+                    
                     
                     
                 </div>
@@ -313,19 +373,20 @@
     <div class="chatroom-dark-cover hide">
         <div class="chatroom-dark-cover-content">
         <div class="chatroom-cover-text-group">
-            <div class="cover-subtitle">실제 토의 주제</div>
-            <div class="cover-title">대전 시청의 주차 관리 문제</div>
-            <div class="cover-explanation">대전시청의 주차 관리와 관련해 어떤 문제가 있고, 이를 해결하려면 어떻게 해야 될 지 논의해봅시다.</div>
+            <div class="cover-subtitle">토의 목표</div>
+            <div class="cover-title">제한 시간 20분 동안 주어진 문제에 대하여<br>적어도 '해결책 토의'까지 완료하기</div>
+            <div class="cover-explanation">주어진 문제를 분석하고, 이를 해결하려면 어떻게 해야 될지 논의해봅시다.</div>
         </div>
         <div class="chatroom-cover-text-group">
             <div class="cover-subtitle">역할</div>
             <div class="cover-title">토의 참여자</div>
-            <div class="cover-explanation">주어진 문제를 해결하기 위한 토의에 참여해 주십시오.</div> <!-- 토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다. -->
+            <div class="cover-explanation">토의에 참여해 주십시오.</div>
         </div>
         <div class="button-wrapper">
-            <a href="" class="button-start">실제 토의 시작하기</a>
+            <input id="roomNum" type="number" placeholder="도우미가 공지한 방 번호를 입력하세요." autofocus>
+            <a id="goToRoom" class="button-start">실제 토의 시작하기</a>
             <a href="/2/" class="button-start resume">튜토리얼 다시 보기</a>
-        </div> <!-- TODO: REAL URL -->
+        </div>
         </div>
     </div>
     <div class="chatroom-info-container">
@@ -342,7 +403,7 @@
         </div>
         <div class="chatroom-time-container">
             <div class="chatroom-info-title">총 토의시간</div>
-            <div class="chatroom-info-content">12:03</div>
+            <div class="chatroom-info-content">00:00</div>
         </div>
         </div>
     </div>
@@ -354,7 +415,9 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
                     <div class="chatroom-utterances-text">네, 저도 동의합니다!
-                         <div class="btn-add">후보 등록</div>
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -363,16 +426,20 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box moderator">사회</div>
                     <div class="chatroom-utterances-text">그러면 '주차 공간 부족하지 않은 상태'에 다들 동의하는 것으로 알고, 다음 단계 진행하겠습니다.
-                         <div class="btn-add">후보 등록</div>
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
 
             <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box">P2</div>
+                    <div class="user-box">P4</div>
                     <div class="chatroom-utterances-text">네, 알겠습니다.
-                         <div class="btn-add">후보 등록</div>
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -388,7 +455,9 @@
                     <div class="user-box moderator">사회</div>
                     <div class="chatroom-utterances-text">
                         이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
-                        <div class="btn-add">후보 등록</div>
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -397,7 +466,9 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box moderator">사회</div>
                     <div class="chatroom-utterances-text">어떤 원인들이 있을까요?
-                         <div class="btn-add">후보 등록</div>
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -406,7 +477,9 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P1</div>
                     <div class="chatroom-utterances-text">단속의 필요성이라고 생각합니다.
-                         <div class="btn-add">후보 등록</div>
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -415,7 +488,9 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
                     <div class="chatroom-utterances-text">무엇보다도 주차 공간 자체가 부족하기 때문 아닐까요?
-                         <div class="btn-add">후보 등록</div>
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -425,7 +500,10 @@
                     <div class="user-box">P4</div>
                     <div class="chatroom-utterances-text">
                          주거 지역에의 주차 밀집 
-                        <div class="btn-add">후보 등록</div>
+
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -436,7 +514,10 @@
                     <div class="chatroom-utterances-text">
                          투표가 어느 정도 진행된 것 같은데 
                         다음 단계로 넘어갈까요? 
-                        <div class="btn-add">후보 등록</div>
+                        
+                        
+                            <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -456,7 +537,7 @@
 </div>
 
 <script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/enjoyhint.js"></script>
+<script src="/assets/js/plugins.js"></script>
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/second.js"></script>
 

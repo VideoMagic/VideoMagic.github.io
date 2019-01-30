@@ -2,19 +2,20 @@
     <div class="chatroom-dark-cover hide">
         <div class="chatroom-dark-cover-content">
         <div class="chatroom-cover-text-group">
-            <div class="cover-subtitle">실제 토의 주제</div>
-            <div class="cover-title">대전 시청의 주차 관리 문제</div>
-            <div class="cover-explanation">대전시청의 주차 관리와 관련해 어떤 문제가 있고, 이를 해결하려면 어떻게 해야 될 지 논의해봅시다.</div>
+            <div class="cover-subtitle">토의 목표</div>
+            <div class="cover-title">제한 시간 20분 동안 주어진 문제에 대하여<br>적어도 '해결책 토의'까지 완료하기</div>
+            <div class="cover-explanation">주어진 문제를 분석하고, 이를 해결하려면 어떻게 해야 될지 논의해봅시다.</div>
         </div>
         <div class="chatroom-cover-text-group">
             <div class="cover-subtitle">역할</div>
             <div class="cover-title">토의 참여자</div>
-            <div class="cover-explanation">주어진 문제를 해결하기 위한 토의에 참여해 주십시오.</div> <!-- 토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다. -->
+            <div class="cover-explanation">토의에 참여해 주십시오.</div>
         </div>
         <div class="button-wrapper">
-            <a href="" class="button-start">실제 토의 시작하기</a>
+            <input id="roomNum" type="number" placeholder="도우미가 공지한 방 번호를 입력하세요." autofocus>
+            <a id="goToRoom" class="button-start">실제 토의 시작하기</a>
             <a href="{{ page.url }}" class="button-start resume">튜토리얼 다시 보기</a>
-        </div> <!-- TODO: REAL URL -->
+        </div>
         </div>
     </div>
     <div class="chatroom-info-container">
@@ -31,7 +32,7 @@
         </div>
         <div class="chatroom-time-container">
             <div class="chatroom-info-title">총 토의시간</div>
-            <div class="chatroom-info-content">12:03</div>
+            <div class="chatroom-info-content">00:00</div>
         </div>
         </div>
     </div>

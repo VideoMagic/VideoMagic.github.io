@@ -51,9 +51,19 @@ $feedback-height: 6.4rem;
   }
 
   .button-wrapper {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
+  #roomNum {
+    display: inline-block;
+    height: 3rem;
+    padding: 0 .5rem;
+    box-sizing: border-box;
+    width: 250px;
+    font-size: .8rem;
+  }
   .button-start {
     background-color: $primary-dark;
     border-radius: .5rem;
@@ -61,7 +71,7 @@ $feedback-height: 6.4rem;
     display: inline-block;
     height: 3rem;
     line-height: 3rem;
-    margin: 0 auto;
+    margin-left: 1rem;
     padding: 0 2.25rem;
 
     &.resume {

@@ -53,8 +53,8 @@ input, .btn { box-sizing: content-box; }
 .overview-wrapper .overview-section-container .section-list-item { color: #999; font-size: .9rem; margin-top: .5rem; }
 .overview-wrapper .overview-section-container .section-list-item.active { color: #f44336; }
 .overview-wrapper .overview-section-container.current .overview-section { padding-top: 1.2rem; padding-bottom: 1.2rem; }
-.overview-wrapper .overview-section-container.current .overview-section .overview-section-list { padding-left: .5rem; }
-.overview-wrapper .overview-section-container.current .overview-section-title { color: #333; font-size: 1.2rem; margin-bottom: 1rem; }
+.overview-wrapper .overview-section-container.current .overview-section .overview-section-list { padding-left: .5rem; margin-top: 1rem; }
+.overview-wrapper .overview-section-container.current .overview-section-title { color: #333; font-size: 1.2rem; }
 .overview-wrapper .overview-section-container.current .overview-next-button { border: 1px solid #f44336; border-radius: .25rem; color: #f44336; height: 2rem; line-height: 2rem; margin-bottom: 1rem; padding-left: .75rem; padding-right: .5rem; position: absolute; right: 1rem; top: 1.2rem; font-size: .9rem; }
 .overview-wrapper .overview-section-container.current .overview-next-button .material-icons { font-size: 1.25rem; line-height: 2rem; vertical-align: sub; }
 .overview-wrapper .overview-section-container.current .overview-next-button + .overview-section-title { padding-right: 7rem; }
@@ -96,8 +96,9 @@ input, .btn { box-sizing: content-box; }
 .chatroom-container .cover-subtitle { color: #dbdbdb; font-size: 1.125rem; }
 .chatroom-container .cover-title { color: #fff; font-size: 1.675rem; font-weight: 600; margin-bottom: .5rem; }
 .chatroom-container .cover-explanation { color: #bdbdbd; }
-.chatroom-container .button-wrapper { text-align: center; }
-.chatroom-container .button-start { background-color: #d75d54; border-radius: .5rem; color: #fff; display: inline-block; height: 3rem; line-height: 3rem; margin: 0 auto; padding: 0 2.25rem; }
+.chatroom-container .button-wrapper { display: flex; align-items: center; justify-content: center; }
+.chatroom-container #roomNum { display: inline-block; height: 3rem; padding: 0 .5rem; box-sizing: border-box; width: 250px; font-size: .8rem; }
+.chatroom-container .button-start { background-color: #d75d54; border-radius: .5rem; color: #fff; display: inline-block; height: 3rem; line-height: 3rem; margin-left: 1rem; padding: 0 2.25rem; }
 .chatroom-container .button-start.resume { margin-left: 1rem; background-color: #999; }
 .chatroom-container .button-start:hover { opacity: .8; }
 .chatroom-container .chatroom-info-container { height: 3rem; left: 0; padding: .35rem 1.5rem 0; position: absolute; right: 0; top: 0; }
@@ -144,7 +145,7 @@ input, .btn { box-sizing: content-box; }
 
 .feedback-wrapper { background-color: #f0f2f5; width: 100%; height: 6.4rem; display: flex; position: absolute; bottom: 0; padding: .8rem 1rem .5rem; }
 .feedback-wrapper .material-icons { font-size: inherit !important; }
-.feedback-wrapper .feedback-card { display: flex; align-items: center; order: 99; background-color: #4e89f3; border-radius: .5rem; padding: .5rem .8rem; color: #fff; position: relative; z-index: 999; line-height: 1.4; transition: all .5s ease; cursor: pointer; transform: scale(1); max-width: 100%; min-width: 150px; }
+.feedback-wrapper .feedback-card { display: flex; align-items: center; order: 99; background-color: #4e89f3; border-radius: .5rem; padding: .5rem .8rem; color: #fff; position: relative; z-index: 999; line-height: 1.4; transition: all .5s ease; cursor: pointer; transform: scale(1); max-width: 100%; min-width: 200px; }
 .feedback-wrapper .feedback-card.clicked { opacity: .8; width: 150px; }
 .feedback-wrapper .feedback-card.complete { opacity: 0; line-height: 0; padding: 0; margin-right: 0 !important; transform: scale(0); min-width: 0; }
 .feedback-wrapper .feedback-card:not(:last-child) { margin-right: .65rem; }
