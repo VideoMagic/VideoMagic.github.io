@@ -14,7 +14,7 @@
 // }
 var enjoyhint_instance;
 var timer;
-var serverHost = "http://localhost:8080"
+var serverHost = "/room/index.html"
 var amModerator = ( document.location.pathname.includes("moderator") ) ? true : false;
 
 function init() {

@@ -7,23 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Scenario 3 | ChatToAction</title>
+<title>Scenario 1 | ChatToAction</title>
 <meta name="generator" content="Jekyll v3.6.2" />
-<meta property="og:title" content="Scenario 3" />
+<meta property="og:title" content="Scenario 1" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="ChatToAction" />
 <meta property="og:description" content="ChatToAction" />
-<link rel="canonical" href="http://localhost:4000/3/moderator/" />
-<meta property="og:url" content="http://localhost:4000/3/moderator/" />
+<link rel="canonical" href="http://localhost:4000/1/" />
+<meta property="og:url" content="http://localhost:4000/1/" />
 <meta property="og:site_name" content="ChatToAction" />
 <script type="application/ld+json">
-{"description":"ChatToAction","@type":"WebPage","url":"http://localhost:4000/3/moderator/","headline":"Scenario 3","@context":"http://schema.org"}</script>
+{"description":"ChatToAction","@type":"WebPage","url":"http://localhost:4000/1/","headline":"Scenario 1","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="theme-color" content="#000">
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="alternate" type="application/rss+xml" title="ChatToAction" href="/feed.xml">
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="alternate" type="application/rss+xml" title="ChatToAction" href="feed.xml">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
@@ -351,7 +351,8 @@
 </div>
     </div>
     <div class="col col-5">
-        <div class="chatroom-container">
+        
+            <div class="chatroom-container">
     <div class="chatroom-dark-cover hide">
         <div class="chatroom-dark-cover-content">
         <div class="chatroom-cover-text-group">
@@ -361,25 +362,24 @@
         </div>
         <div class="chatroom-cover-text-group">
             <div class="cover-subtitle">역할</div>
-            <div class="cover-title">사회자</div>
-            <div class="cover-explanation">토론 참여자들을 독려해 토론이 잘 이루어지게 하는 역할입니다.</div>
+            <div class="cover-title">토의 참여자</div>
+            <div class="cover-explanation">토의에 참여해 주십시오.</div>
         </div>
         <div class="button-wrapper">
             <input id="roomNum" type="number" placeholder="도우미가 공지한 방 번호를 입력하세요." autofocus>
             <a id="goToRoom" class="button-start">실제 토의 시작하기</a>
-            <a href="/3/moderator/" class="button-start resume">튜토리얼 다시 보기</a>
+            <a href="1/" class="button-start resume">튜토리얼 다시 보기</a>
         </div>
         </div>
     </div>
-    
     <div class="chatroom-info-container">
         <div class="chatroom-info-wrapper">
         <div class="chatroom-users-container">
             <div class="chatroom-users-wrapper">
                 <span class="chatroom-info-title">참가자</span>
-                <div class="user-box moderator current">사회</div>
+                <div class="user-box moderator">사회</div>
                 <div class="user-box">P1</div>
-                <div class="user-box">P2</div>
+                <div class="user-box current">P2</div>
                 <div class="user-box">P3</div>
                 <div class="user-box">P4</div>
             </div>
@@ -390,98 +390,54 @@
         </div>
         </div>
     </div>
-
     <div class="chatroom-content-container">
-
-        
-        <!-- Feedback area for moderator only -->
-        <div class="feedback-wrapper">
-            <div class="feedback-default">
-                <i class="material-icons">done</i>이곳에 토론에 도움이 되는 도움말이 표시됩니다
-            </div>
-
-            <!-- <div class="feedback-card hide">
-                <a class="feedback-card-close" (click)="chatService.removeAdvice(advice)">
-                    <i class="material-icons">clear</i>
-                </a>
-                <div class="feedback-card-before" (click)="chatService.sendChatMessage(advice.message); chatService.removeAdvice(advice);" *ngIf="advice.sent == false && !advice.kind.contains('-done')">
-                    <div class="feedback-card-message" [class.tooltip]="advice.message.length > 20">
-                        다음 단계로 넘어갈까요?
-                    </div>
-                    <div class="feedback-card-reason">
-                        <i class="material-icons">info</i> 의견이 어느 정도 모아진 것 같습니다
-                    </div>
-                    <div class="feedback-card-tooltip">
-                        다음 단계로 넘어갈까요?
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="feedback-card hide">
-                <a class="feedback-card-close">
-                    <i class="material-icons">clear</i>
-                </a>
-                <div class="feedback-card-before">
-                    <div class="feedback-card-message tooltip">
-                        이번 단계는 전 단계에서 합의한 문제 원인의 증거가 무엇인지에 대해 논의해보도록 하겠습니다.
-                    </div>
-                    <div class="feedback-card-reason">
-                        <i class="material-icons">info</i> 이번 단계를 소개해보세요
-                    </div>
-                    <!-- <div class="feedback-card-tooltip">
-                        이번 단계는 전 단계에서 합의한 문제 원인의 증거가 무엇인지에 대해 논의해보도록 하겠습니다.
-                    </div> -->
-                </div>
-            </div>
-
-        </div>
-        
 
         <div class="chatroom-content-wrapper">
 
             <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box">P1</div>
-                    <div class="chatroom-utterances-text">다음단계 갑시다
-                         <div class="btn-add">후보 등록</div>
+                    <div class="user-box">P3</div>
+                    <div class="chatroom-utterances-text">네, 저도 동의합니다!
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatroom-utterances-wrapper moderator">
+                <div class="chatroom-utterances-container">
+                    <div class="user-box moderator">사회</div>
+                    <div class="chatroom-utterances-text">그러면 '주차 공간 부족하지 않은 상태'에 다들 동의하는 것으로 알고, 다음 단계 진행하겠습니다.
+                        
                     </div>
                 </div>
             </div>
 
             <div class="chatroom-utterances-wrapper">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box">P2</div>
-                    <div class="chatroom-utterances-text">그러죠 ㄱㄱ
-                         <div class="btn-add">후보 등록</div>
+                    <div class="user-box">P4</div>
+                    <div class="chatroom-utterances-text">네, 알겠습니다.
+                        
                     </div>
                 </div>
             </div>
 
             
 
-            <div class="chatroom-utterances-wrapper">
+            <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box">P3</div>
-                    <div class="chatroom-utterances-text">최상의 상태를 막는 원인이라.. 무엇이 있을까요?
-                         <div class="btn-add">후보 등록</div>
+                    <div class="user-box moderator">사회</div>
+                    <div class="chatroom-utterances-text">
+                        이번 단계는 전 단계에서 합의한 '최상의 상태'를 막는 원인이 무엇인지에 대해 논의해보도록 하겠습니다.
+                        
                     </div>
                 </div>
             </div>
 
-            <div class="chatroom-utterances-wrapper">
+            <div class="chatroom-utterances-wrapper moderator hide">
                 <div class="chatroom-utterances-container">
-                    <div class="user-box">P4</div>
-                    <div class="chatroom-utterances-text">그러게요.
-                         <div class="btn-add">후보 등록</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chatroom-utterances-wrapper">
-                <div class="chatroom-utterances-container">
-                    <div class="user-box">P4</div>
-                    <div class="chatroom-utterances-text">최상의 상태는 '주차 공간이 부족하지 않은 상태'로 합의했는데, 주차 공간이 부족한 원인이 뭘까요?
-                         <div class="btn-add">후보 등록</div>
+                    <div class="user-box moderator">사회</div>
+                    <div class="chatroom-utterances-text">어떤 원인들이 있을까요?
+                        
                     </div>
                 </div>
             </div>
@@ -490,16 +446,7 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P1</div>
                     <div class="chatroom-utterances-text">단속의 필요성이라고 생각합니다.
-                         <div class="btn-add">후보 등록</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chatroom-utterances-wrapper hide">
-                <div class="chatroom-utterances-container">
-                    <div class="user-box">P2</div>
-                    <div class="chatroom-utterances-text">좋네요, 단속 너무 안하는 것 같아요.
-                         <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -508,7 +455,7 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
                     <div class="chatroom-utterances-text">무엇보다도 주차 공간 자체가 부족하기 때문 아닐까요?
-                         <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
@@ -517,35 +464,26 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P4</div>
                     <div class="chatroom-utterances-text">
-                         주거 지역에의 주차 밀집 
-                        <div class="btn-add">후보 등록</div>
-                    </div>
-                </div>
-            </div>
+                         양쪽 의견 모두 일리가 있네요. 
+                        
 
-            <div class="chatroom-utterances-wrapper hide">
-                <div class="chatroom-utterances-container">
-                    <div class="user-box">P1</div>
-                    <div class="chatroom-utterances-text">
-                         투표가 어느 정도 진행된 것 같은데 
-                        다음 단계로 넘어가는 거 어떨까요?
-                        <div class="btn-add">후보 등록</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chatroom-utterances-wrapper hide">
-                <div class="chatroom-utterances-container">
-                    <div class="user-box">P3</div>
-                    <div class="chatroom-utterances-text">
-                        네, 저도 단속의 필요성에 동의합니다. 다음 단계로 넘어가죠. 사회자님?
-                        <div class="btn-add">후보 등록</div>
+                        
                     </div>
                 </div>
             </div>
             
-
-            
+            <div class="chatroom-utterances-wrapper moderator hide">
+                <div class="chatroom-utterances-container">
+                    <div class="user-box moderator">사회</div>
+                    <div class="chatroom-utterances-text">
+                         의견이 어느 정도 모아진 것 같은데 
+                        
+                        다음 단계로 넘어갈까요? 
+                        
+                        
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -557,13 +495,14 @@
     </div>
 </div>
 
+        
     </div>
 </div>
 
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/plugins.js"></script>
-<script src="/assets/js/main.js"></script>
-<script src="/assets/js/third.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/first.js"></script>
 
   
   
