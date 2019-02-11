@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://localhost:4000/2/moderator/" />
 <meta property="og:site_name" content="ChatToAction" />
 <script type="application/ld+json">
-{"description":"ChatToAction","@type":"WebPage","url":"http://localhost:4000/2/moderator/","headline":"Scenario 2 - moderator","@context":"http://schema.org"}</script>
+{"headline":"Scenario 2 - moderator","url":"http://localhost:4000/2/moderator/","description":"ChatToAction","@type":"WebPage","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta name="theme-color" content="#000">
@@ -103,7 +103,7 @@
                     <div class="overview-section-container pseudo">
                         <div class="overview-graphic-line-upper"></div>
                         <div class="overview-graphic-line-lower"></div>
-                        <a class="btn overview-add-section-button top">
+                        <a href="#add-topic" rel="modal:open" class="btn overview-add-section-button top">
                             <i class="material-icons">add</i>
                         </a> 
                     </div>
@@ -143,7 +143,7 @@
                     <div class="overview-section-container pseudo">
                         <div class="overview-graphic-line-upper"></div>
                         <div class="overview-graphic-line-lower"></div>
-                        <a class="btn overview-add-section-button bottom">
+                        <a href="#add-topic" rel="modal:open" class="btn overview-add-section-button bottom">
                             <i class="material-icons">add</i>
                         </a> 
                     </div>
@@ -386,6 +386,20 @@
         </div>
     </div>
 </div>
+
+
+<form id="add-topic" class="modal">
+    <h2>토의 주제 추가</h2>
+    <p>새롭게 추가하고자 하는 토의 주제를 적어주세요</p>
+    <div class="fill-width">
+        <label for="topic">토의 주제 : </label>
+        <input id="topic" type="text" style="width: 70%"/>
+        <br>
+        <a id="submit-btn" rel="modal:close" class="add-topic-btn" style="position: relative; display: inline-block; margin: 1rem .5rem 1rem 0;">추가</a>
+        <a rel="modal:close" class="add-topic-btn" style="position: relative; display: inline-block; margin: 1rem 0; background-color: gray; border-color: gray">닫기</a>
+    </div>
+</form>
+
     </div>
     <div class="col col-5">
         
@@ -498,20 +512,24 @@
             <div class="chatroom-utterances-wrapper hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P2</div>
-                    <div class="chatroom-utterances-text">좋네요, 단속 너무 안하는 것 같아요.
+                    <div class="chatroom-utterances-text">좋네요, 단속 너무 안하죠.
                          <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
             </div>
 
-            <div class="chatroom-utterances-wrapper hide">
+            <div class="chatroom-utterances-wrapper inline hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
                     <div class="chatroom-utterances-text">무엇보다도 주차 공간 자체가 부족하기 때문 아닐까요?
                          <div class="btn-add">후보 등록</div>
                     </div>
+
+                    
                 </div>
             </div>
+
+            
 
             <div class="chatroom-utterances-wrapper evidence hide">
                 <div class="chatroom-utterances-container">

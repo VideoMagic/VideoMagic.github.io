@@ -155,7 +155,11 @@ var enjoyhint_steps = [
 
                 newCurrent = document.querySelector("#question0 .overview-section-container.later");
                 newCurrent.classList.add("current");
-                newCurrent.querySelector(".overview-section").innerHTML += '<div class="overview-section-list"><div class="input-container"> <input class="input-list-new" type="text" placeholder="증거를 입력해보세요"> </div> </div>'
+                newCurrent.querySelector(".overview-section").innerHTML += '<div class="overview-section-list"><div class="input-container"> <input class="input-list-new" type="text" placeholder="증거를 입력해보세요"> </div> </div>';
+
+                let addTopicBtn = document.querySelector(".pseudo")
+                if (addTopicBtn)
+                    document.getElementById("question0").insertBefore(addTopicBtn, newCurrent.nextElementSibling);
             }, 1000);
             
         }
@@ -259,11 +263,32 @@ enjoyhint_steps_moderator.splice(13, 0, {
         }
     }
 });
-enjoyhint_steps_moderator.splice(7, 0, {
-    "click .overview-add-section-button.bottom" : "질문을 추가할 수 있습니다. <br><b>더하기 표시를 클릭</b>해서 <br>문제 분석 과정을 위해 필요하다고 생각되는 <br>새로운 질문을 추가해보세요.",
+enjoyhint_steps_moderator.splice(6, 0, {
+    "custom .overview-add-section-button.bottom" : "질문을 추가할 수 있습니다. <br><b>더하기 표시를 클릭</b>해서 <br>문제 분석 과정을 위해 필요하다고 생각되는 <br>새로운 질문을 추가해보세요.",
     showSkip: false,
     onBeforeStart: function() {
+        var topicInput = document.getElementById("topic");
+        var example = "그 원인은 현실적으로 해결 가능한 것입니까?";
+        Array.from(example).forEach(function(ele, i) {
+            setTimeout(function(){
+                topicInput.value += ele;
+            }, i*50)
+        })
+
+        var addQuestionButton = document.getElementById("submit-btn");
+
+        addQuestionButton.onclick = function(e) {
+            if (enjoyhint_instance.getCurrentStep() == 6) {
+                enjoyhint_instance.trigger("next");
+            }
+
+            
+            
+            addTopic(topicInput.value);
+        }
     }
 });
+
+enjoyhint_steps_moderator[7]["next #question0"] = enjoyhint_steps_moderator[7]["next #question0"].replace("현재는", "질문이 추가되었네요! 현재는");
 
 init();

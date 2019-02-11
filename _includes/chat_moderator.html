@@ -104,7 +104,7 @@
                 </div>
             </div>
 
-            {% if condition == 2 %}
+            {% if condition != 1 %}
             <div class="chatroom-division">
                 <span>최상의 상태를 막는 원인은 무엇입니까?</span>
             </div>
@@ -149,20 +149,55 @@
             <div class="chatroom-utterances-wrapper hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P2</div>
-                    <div class="chatroom-utterances-text">좋네요, 단속 너무 안하는 것 같아요.
+                    <div class="chatroom-utterances-text">좋네요, 단속 너무 안하죠.
                          <div class="btn-add">후보 등록</div>
                     </div>
                 </div>
             </div>
 
-            <div class="chatroom-utterances-wrapper hide">
+            <div class="chatroom-utterances-wrapper inline hide">
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
                     <div class="chatroom-utterances-text">무엇보다도 주차 공간 자체가 부족하기 때문 아닐까요?
                          <div class="btn-add">후보 등록</div>
                     </div>
+
+                    {% if condition == 3 %}
+                    <div class="feedback">
+                        <div class="btn">
+                            <span class="header">좋은 의견 감사합니다.</span>
+                            {{action.title}}
+                        </div>
+                        <div class="btn">
+                            <span class="header">증거가 있을까요?</span>
+                            {{action.title}}
+                        </div>
+                        <div class="btn">
+                            <span class="header">좀더 설명해주실 수 있나요?</span>
+                            {{action.title}}
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
+
+            {% if condition == 3 %}
+            <div class="chatroom-utterances-wrapper reply moderator hide">
+                <div class="chatroom-utterances-container">
+            
+                    <div class="replies">
+                        <div class="replies-container">
+                            <i class="material-icons">subdirectory_arrow_right</i>
+                            <div class="chatroom-utterances-wrapper moderator">
+                                <div class="user-box moderator current">사회</div>
+                                <div class="chatroom-utterances-text">좋은 의견 감사합니다.</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            {% endif %}
 
             <div class="chatroom-utterances-wrapper evidence hide">
                 <div class="chatroom-utterances-container">
@@ -198,7 +233,7 @@
             </div>
             
 
-            {% if condition == 2 %}
+            {% if condition != 1 %}
             <div class="chatroom-division hide">
                 <span>그 원인의 증거는 무엇입니까?</span>
             </div>

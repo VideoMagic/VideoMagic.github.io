@@ -53,17 +53,9 @@ function init() {
 var tabItems = Array.from(document.querySelectorAll(".overview-tab-item"));
 var questions = Array.from(document.querySelectorAll(".overview-sections-wrapper"));
 var addButtons = Array.from(document.querySelectorAll(".btn-add"));
-var addQuestionButtons = Array.from(document.querySelectorAll(".overview-add-section-button"));
 
 var input = document.querySelector(".input-list-new");
 var chatInput = document.querySelector(".chatbox-input");
-
-addQuestionButtons.forEach(function(ele, i) {
-    ele.onclick = function(e) {
-        // modal
-
-    }
-});
 
 tabItems.forEach(function(ele, i) {
     ele.onclick = function(e) {
@@ -145,6 +137,14 @@ function addChat(val, isModerator) {
 
     chatroom.appendChild(item);
     item.scrollIntoView(false);
+}
+
+function addTopic(val) {
+    let later = document.querySelector(".current ~ .overview-section-container.later");
+    let newTopic = later.cloneNode();
+    newTopic.innerHTML = later.innerHTML;
+    newTopic.querySelector(".overview-section-title").innerText = val;
+    questions[0].insertBefore(newTopic, later);
 }
 
 function makeTabsInactive() {

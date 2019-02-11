@@ -33,24 +33,24 @@
 
                     {% for item in overview %}
                     
-                    {% if condition == 2 and isModerator == true and item.status == "current" %}
+                    {% if condition != 1 and isModerator == true and item.status == "current" %}
                     <div class="overview-section-container pseudo">
                         <div class="overview-graphic-line-upper"></div>
                         <div class="overview-graphic-line-lower"></div>
-                        <a class="btn overview-add-section-button top">
+                        <a href="#add-topic" rel="modal:open" class="btn overview-add-section-button top">
                             <i class="material-icons">add</i>
                         </a> 
                     </div>
                     {% endif %}
 
-                    <div class="overview-section-container {% if condition == 2 %} {{item.status}} {% else %} current {% endif %}">
+                    <div class="overview-section-container {% if condition != 1 %} {{item.status}} {% else %} current {% endif %}">
 
                         <div class="overview-graphic-line-upper"></div>
                         <div class="overview-graphic-line-lower"></div>
                         <div class="overview-graphic-line-hor"></div>
 
                         <div class="overview-section">
-                            {% if condition != 2 or item.status == "later" %}
+                            {% if condition == 1 or item.status == "later" %}
                             <div class="overview-section-title">{{ item.question }}</div>
 
                             {% elsif item.status == "current" %}
@@ -66,7 +66,7 @@
                             <div class="overview-section-list">
                                 {% for i in item.items %}
                                 <div class="section-list-item">
-                                    {% if condition == 2 %}
+                                    {% if condition != 1 %}
                                         {% if isModerator == false %}
                                         <a class="list-item-like"><i class="material-icons">thumb_up</i></a>
                                         {% else %}
@@ -105,11 +105,11 @@
 
                     </div>
 
-                    {% if condition == 2 and isModerator == true and item.status == "current" %}
+                    {% if condition != 1 and isModerator == true and item.status == "current" %}
                     <div class="overview-section-container pseudo">
                         <div class="overview-graphic-line-upper"></div>
                         <div class="overview-graphic-line-lower"></div>
-                        <a class="btn overview-add-section-button bottom">
+                        <a href="#add-topic" rel="modal:open" class="btn overview-add-section-button bottom">
                             <i class="material-icons">add</i>
                         </a> 
                     </div>
@@ -122,3 +122,17 @@
         </div>
     </div>
 </div>
+
+{% if condition != 1 and isModerator == true %}
+<form id="add-topic" class="modal">
+    <h2>토의 주제 추가</h2>
+    <p>새롭게 추가하고자 하는 토의 주제를 적어주세요</p>
+    <div class="fill-width">
+        <label for="topic">토의 주제 : </label>
+        <input id="topic" type="text" style="width: 70%"/>
+        <br>
+        <a id="submit-btn" rel="modal:close" class="add-topic-btn" style="position: relative; display: inline-block; margin: 1rem .5rem 1rem 0;">추가</a>
+        <a rel="modal:close" class="add-topic-btn" style="position: relative; display: inline-block; margin: 1rem 0; background-color: gray; border-color: gray">닫기</a>
+    </div>
+</form>
+{% endif %}
