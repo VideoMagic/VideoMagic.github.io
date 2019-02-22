@@ -5,8 +5,36 @@
   display: flex;
   position: absolute;
   bottom: 0;
-  padding: .8rem 1rem .5rem;
+  padding: .8rem 3rem .5rem 1rem;
   // justify-content: flex-end;
+  .feedback-more {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    width: 2rem;
+    height: 2rem;
+    .button {
+      border-bottom: none !important;
+    }
+    &:before {
+      position: absolute;
+      content: "more_horiz";
+      text-align: center;
+      line-height: 2rem;
+      font-size: 1.5rem;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      background: $bg-advice;
+      z-index: 997;
+      border-radius: 5px;
+    }
+    &:hover:before {
+      background: $gray-light;
+    }
+  }
   .material-icons {
     font-size: inherit !important;
   }
@@ -128,5 +156,18 @@
     margin-top: -2rem;
     z-index: 999;
   }
+}
+
+// popup
+.acx-overlay-container > .pane {
+  width: 436px !important;
+}
+.options-list .item {
+  cursor: pointer;
+  padding: 2.5px 20px;
+}
+.search {
+  border-top: 1px solid #efefef;
+  padding-top: .5rem;
 }
 

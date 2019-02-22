@@ -100,9 +100,10 @@ var enjoyhint_steps_moderator = [
         }
     },
     { // 10
-        "click .chatroom-utterances-wrapper.evidence" : "특정 메시지 위에 마우스를 두면, 우측에 <b>'후보 등록'</b> 버튼이 나타납니다.<br>'후보 등록' 버튼을 <b>클릭</b>해서 이 메시지를 투표 후보로 올려보세요!",
+        "custom .chatroom-utterances-wrapper.evidence" : "마찬가지로 특정 메시지 위에 마우스를 두면, 맨 오른쪽에 <b>'후보 등록'</b> 버튼이 나타납니다.<br>'후보 등록' 버튼을 <b>클릭</b>해서 이 메시지를 투표 후보로 올려보세요!",
         showSkip: false,
         onBeforeStart: function() {
+            document.querySelector(".chatroom-utterances-wrapper.evidence + .reply").scrollIntoView(false);
             document.querySelector(".enjoyhint_svg_wrapper").style.transform = "";
             document.querySelector(".enjoyhint_next_btn").style.transform = "";
         }
@@ -290,7 +291,6 @@ enjoyhint_steps_moderator.splice(6, 0, {
 enjoyhint_steps_moderator[7]["next #question0"] = enjoyhint_steps_moderator[7]["next #question0"].replace("현재는", "질문이 추가되었네요! 현재는");
 
 // added only for moderator ver
-// TODO: inline feedback (before 후보추가)
 
 enjoyhint_steps_moderator.splice(11, 0, {
     "custom .chatroom-utterances-wrapper.inline" : "의견을 제시한 메시지에 대해 답변이 추천되었네요. <br><b>클릭해서 추천된 답변을 사용</b>해보세요!",
@@ -301,11 +301,11 @@ enjoyhint_steps_moderator.splice(11, 0, {
 
         Array.from(document.querySelectorAll(".feedback .btn")).forEach(function(ele, i) {
             ele.onclick = function() {
-                let reply = document.querySelector(".chatroom-utterances-wrapper.reply");
+                let reply = ele.parentElement.parentElement.parentElement.nextElementSibling;
                 reply.querySelector(".chatroom-utterances-text").innerText = ele.innerText;
                 reply.classList.remove("hide");
 
-                if (enjoyhint_instance.getCurrentStep() == 11) {
+                if (enjoyhint_instance.getCurrentStep() == 11 || enjoyhint_instance.getCurrentStep() == 13) {
                     document.querySelector(".chatroom-utterances-wrapper.evidence").scrollIntoView(false);
                     enjoyhint_instance.trigger("next");
                 }
@@ -346,6 +346,35 @@ enjoyhint_steps_moderator.splice(18, 0, {
             document.querySelector(".enjoyhint_svg_wrapper").style.transform = "rotateY(180deg) translateX(400px)";
             document.querySelector(".enjoyhint_next_btn").style.transform = "translateX(-400px)";
         }, 800);
+    }
+});
+enjoyhint_steps_moderator.splice(19, 0, {
+    "next .feedback-more" : "이 버튼을 클릭하시면 추천되지 않은 다른 상용구도 이용하실 수 있습니다.",
+    showSkip: false,
+    "nextButton": {text: "다음"},
+    onBeforeStart: function() {
+        document.querySelector(".enjoyhint_svg_wrapper").style.transform = "";
+        document.querySelector(".enjoyhint_next_btn").style.transform = "";
+    }
+});
+
+enjoyhint_steps_moderator.splice(12, 0, {
+    "custom .chatroom-utterances-wrapper.evidence" : "참여자의 메시지 위에 마우스를 두면, 오른쪽에서 두 번째에 <b>'답글 달기'</b> 버튼이 나타납니다.<br>답변이 추천되지 않았지만 답변을 달고 싶을 때에는, 이 '답글 달기' 버튼을 <b>클릭</b>해주세요.<br>클릭해서 답글을 달아 볼까요?",
+    showSkip: false,
+    onBeforeStart: function() {
+        document.getElementById("add-reply").onclick = function(e) {
+            document.querySelector(".evidence .feedback").classList.remove("hide");
+            enjoyhint_instance.trigger("next");
+        }
+        document.querySelector(".enjoyhint_svg_wrapper").style.transform = "";
+        document.querySelector(".enjoyhint_next_btn").style.transform = "";
+    }
+});
+enjoyhint_steps_moderator.splice(13, 0, {
+    "custom .chatroom-utterances-wrapper.evidence" : "답변 선택지가 나타났네요! <b>클릭</b>해서 답변을 달아보세요!",
+    showSkip: false,
+    onBeforeStart: function() {
+        document.querySelector(".chatroom-utterances-wrapper.evidence").scrollIntoView(false);
     }
 });
 

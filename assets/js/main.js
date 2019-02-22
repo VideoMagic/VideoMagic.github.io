@@ -52,7 +52,7 @@ function init() {
 
 var tabItems = Array.from(document.querySelectorAll(".overview-tab-item"));
 var questions = Array.from(document.querySelectorAll(".overview-sections-wrapper"));
-var addButtons = Array.from(document.querySelectorAll(".btn-add"));
+var addButtons = Array.from(document.querySelectorAll(".btn-add span:last-child"));
 
 var input = document.querySelector(".input-list-new");
 var chatInput = document.querySelector(".chatbox-input");
@@ -80,8 +80,11 @@ if (input) {
 
 addButtons.forEach(function(ele) {
     ele.onclick = function(e) {
-        let text = ele.parentElement.innerText;
-        addItem( text.substr(0, text.length - 6) );
+        let text = ele.parentElement.parentElement.innerText;
+        addItem( text.substr(0, text.length - 12) );
+
+        if (enjoyhint_instance.getCurrentStep() == 14 && amModerator)
+            enjoyhint_instance.trigger("next");
     }
 });
 

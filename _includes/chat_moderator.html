@@ -43,26 +43,12 @@
         {% if condition == 3 %}
         <!-- Feedback area for moderator only -->
         <div class="feedback-wrapper">
+            <a href="#show-video" rel="modal:open" buttonariarole="combobox" class="feedback-more material-icons _ngcontent-wvw-0 _nghost-wvw-1">
+            </a>
+
             <div class="feedback-default">
                 <i class="material-icons">done</i>이곳에 토론에 도움이 되는 도움말이 표시됩니다
             </div>
-
-            <!-- <div class="feedback-card hide">
-                <a class="feedback-card-close" (click)="chatService.removeAdvice(advice)">
-                    <i class="material-icons">clear</i>
-                </a>
-                <div class="feedback-card-before" (click)="chatService.sendChatMessage(advice.message); chatService.removeAdvice(advice);" *ngIf="advice.sent == false && !advice.kind.contains('-done')">
-                    <div class="feedback-card-message" [class.tooltip]="advice.message.length > 20">
-                        다음 단계로 넘어갈까요?
-                    </div>
-                    <div class="feedback-card-reason">
-                        <i class="material-icons">info</i> 의견이 어느 정도 모아진 것 같습니다
-                    </div>
-                    <div class="feedback-card-tooltip">
-                        다음 단계로 넘어갈까요?
-                    </div>
-                </div>
-            </div> -->
 
             <div class="feedback-card hide">
                 <a class="feedback-card-close">
@@ -90,7 +76,10 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P1</div>
                     <div class="chatroom-utterances-text">다음단계 갑시다
-                         <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,7 +88,10 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P2</div>
                     <div class="chatroom-utterances-text">그러죠 ㄱㄱ
-                         <div class="btn-add">후보 등록</div>
+                         <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -114,7 +106,10 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
                     <div class="chatroom-utterances-text">최상의 상태를 막는 원인이라.. 무엇이 있을까요?
-                         <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,7 +118,10 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P4</div>
                     <div class="chatroom-utterances-text">그러게요.
-                         <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,7 +130,10 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P4</div>
                     <div class="chatroom-utterances-text">최상의 상태는 '주차 공간이 부족하지 않은 상태'로 합의했는데, 주차 공간이 부족한 원인이 뭘까요?
-                         <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,7 +142,10 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P1</div>
                     <div class="chatroom-utterances-text">단속의 필요성이라고 생각합니다.
-                         <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,7 +154,10 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P2</div>
                     <div class="chatroom-utterances-text">좋네요, 단속 너무 안하죠.
-                         <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,22 +166,21 @@
                 <div class="chatroom-utterances-container">
                     <div class="user-box">P3</div>
                     <div class="chatroom-utterances-text">무엇보다도 주차 공간 자체가 부족하기 때문 아닐까요?
-                         <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            <span>후보 등록</span>
+                        </div>
                     </div>
 
                     {% if condition == 3 %}
                     <div class="feedback">
                         <div class="btn">
-                            <span class="header">좋은 의견 감사합니다.</span>
-                            {{action.title}}
+                            좋은 의견 감사합니다.
                         </div>
                         <div class="btn">
-                            <span class="header">증거가 있을까요?</span>
-                            {{action.title}}
+                            증거가 있을까요?
                         </div>
                         <div class="btn">
-                            <span class="header">좀더 설명해주실 수 있나요?</span>
-                            {{action.title}}
+                            좀더 설명해주실 수 있나요?
                         </div>
                     </div>
                     {% endif %}
@@ -205,10 +211,45 @@
                     <div class="chatroom-utterances-text">
                         {% if condition == 1 %} 공간도 부족하지만, 더 큰 원인은 단속의 문제 같네요. 
                         {% else %} 주거 지역에의 주차 밀집 {% endif %}
-                        <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span id="add-reply">답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
+
+                    {% if condition == 3 %}
+                    <div class="feedback hide">
+                        <div class="btn">
+                            좋은 의견 감사합니다.
+                        </div>
+                        <div class="btn">
+                            증거가 있을까요?
+                        </div>
+                        <div class="btn">
+                            좀더 설명해주실 수 있나요?
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
+
+            {% if condition == 3 %}
+            <div class="chatroom-utterances-wrapper reply moderator hide">
+                <div class="chatroom-utterances-container">
+            
+                    <div class="replies">
+                        <div class="replies-container">
+                            <i class="material-icons">subdirectory_arrow_right</i>
+                            <div class="chatroom-utterances-wrapper moderator">
+                                <div class="user-box moderator current">사회</div>
+                                <div class="chatroom-utterances-text">좋은 의견 감사합니다.</div>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+            {% endif %}
 
             <div class="chatroom-utterances-wrapper hide">
                 <div class="chatroom-utterances-container">
@@ -217,7 +258,10 @@
                         {% if condition == 1 %} 의견이 어느 정도 모아진 것 같은데 
                         {% else %} 투표가 어느 정도 진행된 것 같은데 {% endif %}
                         다음 단계로 넘어가는 거 어떨까요?
-                        <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -227,7 +271,10 @@
                     <div class="user-box">P3</div>
                     <div class="chatroom-utterances-text">
                         네, 저도 단속의 필요성에 동의합니다. 다음 단계로 넘어가죠. 사회자님?
-                        <div class="btn-add">후보 등록</div>
+                        <div class="btn-add">
+                            {% if condition == 3 %} <span>답글 달기</span> {% endif %}
+                            <span>후보 등록</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -248,3 +295,14 @@
         </div>
     </div>
 </div>
+
+{% if condition != 1 and isModerator == true %}
+<form id="show-video" class="modal">
+    <h2>추천되지 않은 다른 상용구를 이용하는 방법</h2>
+    <p>동영상으로 사용방법을 확인해보세요.</p>
+    <div class="fill-width">
+        <video src="{{ '/assets/video/tutorial.mp4' | relative_url }}" controls autoplay></video>
+        <a rel="modal:close" onclick="enjoyhint_instance.trigger('next')" class="add-topic-btn" style="position: relative; display: inline-block; margin: 1rem .5rem 1rem 0;">닫기</a>
+    </div>
+</form>
+{% endif %}
