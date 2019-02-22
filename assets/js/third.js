@@ -329,7 +329,7 @@ enjoyhint_steps_moderator.splice(17, 0, {
             card.remove();
             document.querySelector(".feedback-default").classList.remove("hide");
 
-            if (enjoyhint_instance.getCurrentStep() == 17)
+            if (enjoyhint_instance.getCurrentStep() == 19)
                 enjoyhint_instance.trigger("next");
         }
     }
