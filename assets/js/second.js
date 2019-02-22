@@ -289,6 +289,7 @@ enjoyhint_steps_moderator.splice(6, 0, {
     }
 });
 
-enjoyhint_steps_moderator[7]["next #question0"] = enjoyhint_steps_moderator[7]["next #question0"].replace("현재는", "질문이 추가되었네요! 현재는");
+if (amModerator)
+    enjoyhint_steps_moderator[7]["next #question0"] = enjoyhint_steps_moderator[7]["next #question0"].replace("현재는", "질문이 추가되었네요! 현재는");
 
 init();
