@@ -1,11 +1,11 @@
 var enjoyhint_steps_moderator = [
     { // 0
-        "next .overview-wrapper": "이곳은 <b>토의의 개요</b>를 볼 수 있는<br> 탭입니다.",
+        "next .overview-title-wrapper": "최상단에는 <b>토의의 주제</b>가 있습니다.",
         showSkip: false,
         "nextButton": {text: "다음"}
     },
-    {
-        "next .overview-title-wrapper": "최상단에는 <b>토의의 주제</b>가 있습니다.",
+    { // 1
+        "next .overview-content-wrapper": "이곳은 <b>토의의 개요</b>를 볼 수 있는<br> 탭입니다.",
         showSkip: false,
         "nextButton": {text: "다음"}
     },
@@ -48,25 +48,16 @@ var enjoyhint_steps_moderator = [
         }
     },
     {
-        "custom .overview-section-container.current" : "다른 토의자들도 원인을 추가하였습니다. 적절한 원인에 <b>투표</b>를 해주세요. 중복 투표가 가능합니다.",
+        "custom .overview-section-container.current" : "적절한 원인에 <b>투표</b>를 해주세요. 중복 투표가 가능합니다.",
         event: "vote",
         showSkip: false,
         onBeforeStart: function() {
-            setTimeout(function() {
-                addItem("단속의 필요성");
-            }, 500)
-            setTimeout(function() {
-                addItem("주차 공간 자체의 부족");
-            }, 1000)
-
-            setTimeout(function() {
-                Array.from(document.querySelectorAll(".list-item-like")).forEach(function(ele) {
-                    ele.addEventListener("click", function(e) {
-                        if (enjoyhint_instance.getCurrentStep() == 8)
-                            enjoyhint_instance.trigger("next");
-                    });
+            Array.from(document.querySelectorAll(".list-item-like")).forEach(function(ele) {
+                ele.addEventListener("click", function(e) {
+                    if (enjoyhint_instance.getCurrentStep() == 8)
+                        enjoyhint_instance.trigger("next");
                 });
-            }, 1010)
+            });
 
         }
     },

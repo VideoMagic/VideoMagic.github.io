@@ -1,11 +1,11 @@
 var enjoyhint_steps = [
     { // 0
-        "next .overview-wrapper": "이곳은 <b>토의의 개요</b>를 볼 수 있는<br> 탭입니다.",
+        "next .overview-title-wrapper": "최상단에는 <b>토의의 주제</b>가 있습니다.",
         showSkip: false,
         "nextButton": {text: "다음"}
     },
-    {
-        "next .overview-title-wrapper": "최상단에는 <b>토의의 주제</b>가 있습니다.",
+    { // 1
+        "next .overview-content-wrapper": "이곳은 <b>토의의 개요</b>를 볼 수 있는<br> 탭입니다.",
         showSkip: false,
         "nextButton": {text: "다음"}
     },
