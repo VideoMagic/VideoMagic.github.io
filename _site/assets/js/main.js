@@ -14,7 +14,7 @@
 // }
 var enjoyhint_instance;
 var timer;
-var serverHost = "http://localhost:8080"
+var serverHost = "http://143.248.249.114:4000/room/index.html"
 var amModerator = ( document.location.pathname.includes("moderator") ) ? true : false;
 
 function init() {
@@ -81,10 +81,14 @@ if (input) {
 addButtons.forEach(function(ele) {
     ele.onclick = function(e) {
         let text = ele.parentElement.parentElement.innerText;
-        addItem( text.substr(0, text.length - 12) );
 
-        if (enjoyhint_instance.getCurrentStep() == 14 && amModerator)
+        if (enjoyhint_instance.getCurrentStep() == 14 && amModerator) {
+            addItem( text.substr(0, text.length - 12) );
             enjoyhint_instance.trigger("next");
+        }
+        else {
+            addItem( text.substr(0, text.length - 6) );
+        }
     }
 });
 

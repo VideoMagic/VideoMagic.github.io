@@ -329,7 +329,7 @@ enjoyhint_steps_moderator.splice(17, 0, {
             card.remove();
             document.querySelector(".feedback-default").classList.remove("hide");
 
-            if (enjoyhint_instance.getCurrentStep() == 17)
+            if (enjoyhint_instance.getCurrentStep() == 19)
                 enjoyhint_instance.trigger("next");
         }
     }
@@ -359,7 +359,7 @@ enjoyhint_steps_moderator.splice(19, 0, {
 });
 
 enjoyhint_steps_moderator.splice(12, 0, {
-    "custom .chatroom-utterances-wrapper.evidence" : "참여자의 메시지 위에 마우스를 두면, 오른쪽에서 두 번째에 <b>'답글 달기'</b> 버튼이 나타납니다.<br>답변이 추천되지 않았지만 답변을 달고 싶을 때에는, '답글 달기' 버튼을 <b>클릭</b>해주세요.<br>클릭해서 답글을 달아 볼까요?",
+    "custom .chatroom-utterances-wrapper.evidence" : "참여자의 메시지 위에 마우스를 두면, 오른쪽에서 두 번째에 <b>'답글 달기'</b> 버튼이 나타납니다.<br>답변이 추천되지 않았지만 답변을 달고 싶을 때에는, 이 '답글 달기' 버튼을 <b>클릭</b>해주세요.<br>클릭해서 답글을 달아 볼까요?",
     showSkip: false,
     onBeforeStart: function() {
         document.getElementById("add-reply").onclick = function(e) {
