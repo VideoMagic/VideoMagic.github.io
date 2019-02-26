@@ -10,7 +10,7 @@ var enjoyhint_steps = [
         "nextButton": {text: "다음"}
     },
     { // 2
-        "next .overview-tabs" : "<b>세 단계</b>를 거쳐 토의가 이루어집니다. 현재 '<b>문제 분석</b>' 단계에 있습니다.",
+        "next .overview-tabs" : "<b>두 단계</b>를 거쳐 토의가 이루어집니다. 현재 '<b>문제 분석</b>' 단계에 있습니다.",
         showSkip: false,
         "nextButton": {text: "다음"}
     },
@@ -166,7 +166,12 @@ var enjoyhint_steps = [
         showSkip: false
     },
     { // 14
-        "next .chatroom-time-container" : "제한 시간은 20분입니다. 여기에 경과 시간이 표시가 됩니다.<br><b>20분 동안 '해결책 토의' 단계까지</b> 마치는 것이 목표입니다.",
+        "next .prev:first-child" : "첫 번째 순서에서는 토의자들이 서로 <b>간단히 인사</b>를 나눌 수 있습니다. <br>곧 실제 채팅이 시작되면 우선 인사를 나누어 보세요 :)",
+        showSkip: false,
+        "nextButton": {text: "다음"}
+    },
+    { // 15
+        "next .chatroom-time-container" : "제한 시간은 20분입니다. 여기에 <b>경과 시간</b>이 표시가 됩니다.<br><b>20분 동안 '해결책 토의' 단계까지</b> 마치는 것이 목표입니다.",
         showSkip: false,
         "nextButton": {text: "종료"},
         onBeforeStart: function() {
@@ -179,7 +184,12 @@ var enjoyhint_steps = [
 
 // moderator ver
 var enjoyhint_steps_moderator = [...enjoyhint_steps];
-enjoyhint_steps_moderator[12]["next #question1"] = enjoyhint_steps_moderator[12]["next #question1"].replace("에 참여", "을 진행");
+
+if (amModerator) {
+    enjoyhint_steps_moderator[3]["next #question0"] = enjoyhint_steps_moderator[3]["next #question0"].replace("현재는", "질문이 추가되었네요! 현재는");
+    enjoyhint_steps_moderator[12]["next #question1"] = enjoyhint_steps_moderator[12]["next #question1"].replace("에 참여", "을 진행");
+}
+
 enjoyhint_steps_moderator[6] = {
     "custom .overview-section-container.current" : "토의자들이 한계점을 추가하였습니다. <br>부적절한 한계점은 <b>휴지통 버튼을 눌러 삭제</b>해주세요.",
     showSkip: false,
@@ -287,8 +297,5 @@ enjoyhint_steps_moderator.splice(6, 0, {
         }
     }
 });
-
-if (amModerator)
-    enjoyhint_steps_moderator[7]["next #question0"] = enjoyhint_steps_moderator[7]["next #question0"].replace("현재는", "질문이 추가되었네요! 현재는");
 
 init();

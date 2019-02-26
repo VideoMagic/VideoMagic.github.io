@@ -10,7 +10,7 @@ var enjoyhint_steps = [
         "nextButton": {text: "다음"}
     },
     {
-        "next .overview-tabs" : "<b>세 단계</b>를 거쳐 토의가 이루어집니다. 현재 '<b>문제 분석</b>' 단계를 보고 계십니다.",
+        "next .overview-tabs" : "<b>두 단계</b>를 거쳐 토의가 이루어집니다. 현재 '<b>문제 분석</b>' 단계를 보고 계십니다.",
         showSkip: false,
         "nextButton": {text: "다음"}
     },

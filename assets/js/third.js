@@ -10,7 +10,7 @@ var enjoyhint_steps_moderator = [
         "nextButton": {text: "다음"}
     },
     {
-        "next .overview-tabs" : "<b>세 단계</b>를 거쳐 토의가 이루어집니다. 현재 '<b>문제 분석</b>' 단계에 있습니다.",
+        "next .overview-tabs" : "<b>두 단계</b>를 거쳐 토의가 이루어집니다. 현재 '<b>문제 분석</b>' 단계에 있습니다.",
         showSkip: false,
         "nextButton": {text: "다음"}
     },

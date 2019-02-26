@@ -23,6 +23,11 @@ layout: default
 </div>
 
 {% include script.html %}
-<script src="{{ '/assets/js/second.js' | relative_url }}"></script>
+
+{% if isModerator == true %}
+    <script src="{{ '/assets/js/second_moderator.js' | relative_url }}"></script>
+{% else %}
+    <script src="{{ '/assets/js/second.js' | relative_url }}"></script>
+{% endif %}
 
   
