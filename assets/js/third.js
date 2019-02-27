@@ -365,6 +365,10 @@ enjoyhint_steps_moderator.splice(13, 0, {
     "custom .chatroom-utterances-wrapper.evidence" : "답변 선택지가 나타났네요! <b>클릭</b>해서 답변을 달아보세요!",
     showSkip: false,
     onBeforeStart: function() {
+        let dropdown = document.getElementById("dropdown");
+        if (!dropdown.classList.contains("hide")) {
+            dropdown.classList.add("hide");
+        }
         document.querySelector(".chatroom-utterances-wrapper.evidence").scrollIntoView(false);
     }
 });
