@@ -137,12 +137,35 @@ function addChat(val, isModerator) {
         userClass += " moderator";
         item.className += "moderator ";
     }
+    var value = "";
+
+    value += val;
+    let isSecond = val.includes("밀집");
+    if (isSecond) {
+        value += '<div class="btn-add"><span>후보 등록</span></div>';
+    }
 
     item.className += " chatroom-utterances-wrapper";
     item.innerHTML = '<div class="chatroom-utterances-container"> <div class="user-box ' + userClass + '">' + user + '</div> <div class="chatroom-utterances-text">' 
-        + val + '</div></div>';
+        + value + '</div></div>';
 
-    chatroom.appendChild(item);
+
+    // append before hidden
+    var hidden = document.querySelector(".chatroom-utterances-wrapper.hide");
+
+    if (hidden)
+        chatroom.insertBefore(item, hidden);
+    else
+        chatroom.appendChild(item);
+
+    // addButton
+    if (isSecond) {
+        item.querySelector(".btn-add span").onclick = function() {
+            addItem( val );
+        }
+    }
+        
+    // scroll
     item.scrollIntoView(false);
 }
 
