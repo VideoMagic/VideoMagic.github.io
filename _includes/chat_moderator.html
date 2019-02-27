@@ -43,8 +43,8 @@
         {% if condition == 3 %}
         <!-- Feedback area for moderator only -->
         <div class="feedback-wrapper">
-            <a href="#show-video" rel="modal:open" buttonariarole="combobox" class="feedback-more material-icons _ngcontent-wvw-0 _nghost-wvw-1">
-            </a>
+            <div class="feedback-more material-icons">
+            </div>
 
             <div class="feedback-default">
                 <i class="material-icons">done</i>이곳에 토론에 도움이 되는 도움말이 표시됩니다
@@ -297,12 +297,13 @@
 </div>
 
 {% if condition == 3 and isModerator == true %}
-<form id="show-video" class="modal">
-    <h2>추천되지 않은 다른 상용구를 이용하는 방법</h2>
-    <p>동영상으로 사용방법을 확인해보세요.</p>
-    <div class="fill-width">
-        <video src="{{ '/assets/video/tutorial.mp4' | relative_url }}" controls autoplay></video>
-        <a rel="modal:close" onclick="enjoyhint_instance.trigger('next')" class="add-topic-btn" style="position: relative; display: inline-block; margin: 1rem .5rem 1rem 0;">닫기</a>
-    </div>
-</form>
+<div id="dropdown">
+    <div class="dropdown-option">다른 의견은 없으신가요?</div>
+    <div class="dropdown-option">토론범위를 줄여서 토론해볼까요?</div>
+    <div class="dropdown-option">이제까지 나온 의견들에 대해 투표할까요?</div>
+    <div class="dropdown-option">이제 투표를 해볼까요?</div>
+    <div class="dropdown-option">이제 다음 순서로 갈까요?</div>
+    <div class="dropdown-option">모아진 의견이 너무 편향적이진 않는지 생각해봅시다.</div>
+    <div class="dropdown-option">투표 후보로 등록된 의견에 대해 각각 증거를 찾아볼까요?</div>
+</div>
 {% endif %}

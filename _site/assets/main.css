@@ -149,7 +149,7 @@ input, .btn { box-sizing: content-box; }
 .chatroom-container .feedback .btn .header { opacity: .8; }
 
 .feedback-wrapper { background-color: #f0f2f5; width: 100%; height: 6.4rem; display: flex; position: absolute; bottom: 0; padding: .8rem 3rem .5rem 1rem; }
-.feedback-wrapper .feedback-more { position: absolute; right: .5rem; top: .5rem; width: 2rem; height: 2rem; }
+.feedback-wrapper .feedback-more { position: absolute; right: .5rem; top: .5rem; width: 2rem; height: 2rem; cursor: pointer; }
 .feedback-wrapper .feedback-more .button { border-bottom: none !important; }
 .feedback-wrapper .feedback-more:before { position: absolute; content: "more_horiz"; text-align: center; line-height: 2rem; font-size: 1.5rem; top: 0; bottom: 0; left: 0; right: 0; pointer-events: none; background: #f0f2f5; z-index: 997; border-radius: 5px; }
 .feedback-wrapper .feedback-more:hover:before { background: #bdbdbd; }
