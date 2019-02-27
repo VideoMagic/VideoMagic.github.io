@@ -371,7 +371,17 @@ enjoyhint_steps_moderator.splice(13, 0, {
 
 init();
 
-// // feedback more
-// document.querySelector(".feedback-more").onclick = function() {
+// feedback more
+let moreBtn = document.querySelector(".feedback-more");
+moreBtn.onclick = function(e) {
+    if (e.target != moreBtn) return;
+    document.getElementById("dropdown").classList.remove("hide");
+}
 
-// }
+Array.from( document.querySelectorAll(".dropdown-option") ).forEach(function(ele) {
+    ele.onclick = function() {
+        addChat(ele.innerText, true);
+        document.getElementById("dropdown").classList.add("hide");
+        enjoyhint_instance.trigger("next");
+    }
+})

@@ -8,3 +8,28 @@
 #show-video {
     max-width: 65vw !important;
 }
+
+.feedback-more {
+    cursor: pointer;
+    #dropdown {
+        position: absolute;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 1201;
+        top: -250px;
+        height: 280px;
+        left: -380px;
+        width: 410px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0,0,0,.1);
+        .dropdown-option {
+            padding: .65rem 1.2rem;
+            &:hover {
+                cursor: pointer;
+                background: #efefef;
+            }
+        }
+    }
+}
